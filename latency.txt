@@ -1,0 +1,672 @@
+grep -nr 'latency' ./CoMeT/*
+
+./CoMeT/benchmarks/parsec/parsec-2.1/pkgs/apps/x264/src/common/x86/pixel-a.asm:336:; even on Penryn, phaddw has latency 3 while paddw and punpck* have 1.
+./CoMeT/benchmarks/parsec/parsec-2.1/pkgs/apps/x264/src/common/x86/quant-a.asm:639:    jge  .ret9      ;this early termination is only useful on 32-bit because it can be done in the latency after shrd
+./CoMeT/benchmarks/parsec/parsec-2.1/pkgs/libs/zlib/src/zlib.h:246:  output latency (reading input without producing any output) except when
+./CoMeT/benchmarks/parsec/parsec-2.1/pkgs/libs/zlib/src/zlib.h:367:  some output latency (reading input without producing any output) except when
+./CoMeT/benchmarks/parsec/parsec-2.1/pkgs/libs/zlib/src/examples/zlib_how.html:207:so far, even if it wouldn't have otherwise, for example to control data latency on a link with
+./CoMeT/benchmarks/parsec/parsec-2.1/pkgs/libs/zlib/src/contrib/inflate86/inffast.S:42: * have less latency than MMX ops.  Added code to buffer the last 11 bytes of
+./CoMeT/benchmarks/parsec/parsec-2.1/pkgs/libs/zlib/src/old/zlib.html:397:  output latency (reading input without producing any output) except when
+./CoMeT/benchmarks/parsec/parsec-2.1/pkgs/libs/zlib/src/old/zlib.html:519:  introduce some output latency (reading input without producing any output)
+./CoMeT/benchmarks/parsec/parsec-2.1/pkgs/libs/ssl/src/crypto/sha/asm/sha512-ia64.pl:42:# MMALU itself has 2 cycles latency. However! I explicitly scheduled
+./CoMeT/benchmarks/parsec/parsec-2.1/pkgs/libs/ssl/src/crypto/aes/asm/aes-ia64.S:22:// references to S-boxes for L2 cache latency, c) prefetching T[ed]4
+./CoMeT/benchmarks/parsec/parsec-2.1/pkgs/libs/ssl/src/crypto/bn/asm/ia64.S:37:// Wrong! Note that getf latency increased. This means that if a loop is
+./CoMeT/benchmarks/parsec/parsec-2.1/pkgs/libs/ssl/src/crypto/bn/asm/ia64.S:38:// scheduled for lower latency (as they were), then it will suffer from
+./CoMeT/benchmarks/parsec/parsec-2.1/pkgs/libs/ssl/src/crypto/bn/asm/ia64.S:43:// for worst latency for every instruction aiming for best *all-round*
+./CoMeT/benchmarks/parsec/parsec-2.1/pkgs/libs/ssl/src/crypto/bn/asm/ia64.S:319:// bypass L1 cache and L2 latency is actually best-case scenario for
+./CoMeT/benchmarks/parsec/parsec-2.1/pkgs/libs/ssl/src/crypto/bn/asm/ia64.S:363:// The loop therefore spins at the latency of xma minus 1, or in other
+./CoMeT/benchmarks/parsec/parsec-2.1/pkgs/libs/ssl/src/crypto/bn/asm/ia64.S:365:// that runs in 2*(n+11) where the low latency problem is worked around
+./CoMeT/benchmarks/parsec/parsec-2.1/pkgs/libs/ssl/src/crypto/bn/asm/ia64.S:367:// "distance" between ldf8 and xma is not latency of ldf8, but the
+./CoMeT/benchmarks/parsec/parsec-2.1/pkgs/libs/ssl/src/crypto/bn/asm/ia64.S:682://	implementation will have same latency:-). This stall will hold
+./CoMeT/benchmarks/parsec/parsec-2.1/pkgs/libs/mesa/src/src/glut/glx/glut_event.c:1319:       longer latency because lots of OpenGL extension requests 
+./CoMeT/benchmarks/parsec/parsec-2.1/pkgs/libs/mesa/src/src/glut/glx/glut_win.c:163:     longer latency because lots of OpenGL extension requests
+./CoMeT/benchmarks/parsec/parsec-2.1/pkgs/libs/mesa/src/src/mesa/drivers/dri/common/xmlpool/t_options.h:166:        DRI_CONF_DESC_BEGIN(en,gettext("Method to limit rendering latency")) \
+./CoMeT/benchmarks/parsec/parsec-2.1/pkgs/libs/mesa/src/src/mesa/drivers/dri/common/xmlpool/sv.po:136:msgid "Method to limit rendering latency"
+./CoMeT/benchmarks/parsec/parsec-2.1/pkgs/libs/mesa/src/src/mesa/drivers/dri/common/xmlpool/de.po:142:msgid "Method to limit rendering latency"
+./CoMeT/benchmarks/parsec/parsec-2.1/pkgs/libs/mesa/src/src/mesa/drivers/dri/common/xmlpool/options.h:340:        DRI_CONF_DESC_BEGIN(en,"Method to limit rendering latency") \
+./CoMeT/benchmarks/parsec/parsec-2.1/pkgs/libs/mesa/src/src/mesa/drivers/dri/common/xmlpool/fr.po:141:msgid "Method to limit rendering latency"
+./CoMeT/benchmarks/parsec/parsec-2.1/pkgs/libs/mesa/src/src/mesa/drivers/dri/common/xmlpool/es.po:139:msgid "Method to limit rendering latency"
+./CoMeT/benchmarks/parsec/parsec-2.1/pkgs/libs/mesa/src/src/mesa/drivers/dri/common/xmlpool/nl.po:142:msgid "Method to limit rendering latency"
+./CoMeT/benchmarks/parsec/parsec-2.1/pkgs/libs/mesa/obj/amd64-linux.gcc-sniper/src/glut/glx/glut_event.c:1319:       longer latency because lots of OpenGL extension requests 
+./CoMeT/benchmarks/parsec/parsec-2.1/pkgs/libs/mesa/obj/amd64-linux.gcc-sniper/src/glut/glx/glut_win.c:163:     longer latency because lots of OpenGL extension requests
+./CoMeT/benchmarks/parsec/parsec-2.1/pkgs/libs/mesa/obj/amd64-linux.gcc-sniper/src/mesa/drivers/dri/common/xmlpool/t_options.h:166:        DRI_CONF_DESC_BEGIN(en,gettext("Method to limit rendering latency")) \
+./CoMeT/benchmarks/parsec/parsec-2.1/pkgs/libs/mesa/obj/amd64-linux.gcc-sniper/src/mesa/drivers/dri/common/xmlpool/sv.po:136:msgid "Method to limit rendering latency"
+./CoMeT/benchmarks/parsec/parsec-2.1/pkgs/libs/mesa/obj/amd64-linux.gcc-sniper/src/mesa/drivers/dri/common/xmlpool/de.po:142:msgid "Method to limit rendering latency"
+./CoMeT/benchmarks/parsec/parsec-2.1/pkgs/libs/mesa/obj/amd64-linux.gcc-sniper/src/mesa/drivers/dri/common/xmlpool/options.h:340:        DRI_CONF_DESC_BEGIN(en,"Method to limit rendering latency") \
+./CoMeT/benchmarks/parsec/parsec-2.1/pkgs/libs/mesa/obj/amd64-linux.gcc-sniper/src/mesa/drivers/dri/common/xmlpool/fr.po:141:msgid "Method to limit rendering latency"
+./CoMeT/benchmarks/parsec/parsec-2.1/pkgs/libs/mesa/obj/amd64-linux.gcc-sniper/src/mesa/drivers/dri/common/xmlpool/es.po:139:msgid "Method to limit rendering latency"
+./CoMeT/benchmarks/parsec/parsec-2.1/pkgs/libs/mesa/obj/amd64-linux.gcc-sniper/src/mesa/drivers/dri/common/xmlpool/nl.po:142:msgid "Method to limit rendering latency"
+./CoMeT/benchmarks/parsec/parsec-2.1/pkgs/tools/cmake/src/Utilities/cmzlib/zlib.h:246:  output latency (reading input without producing any output) except when
+./CoMeT/benchmarks/parsec/parsec-2.1/pkgs/tools/cmake/src/Utilities/cmzlib/zlib.h:367:  some output latency (reading input without producing any output) except when
+./CoMeT/benchmarks/parsec/parsec-2.1/pkgs/tools/cmake/obj/amd64-linux.gcc-sniper/Utilities/cmzlib/zlib.h:246:  output latency (reading input without producing any output) except when
+./CoMeT/benchmarks/parsec/parsec-2.1/pkgs/tools/cmake/obj/amd64-linux.gcc-sniper/Utilities/cmzlib/zlib.h:367:  some output latency (reading input without producing any output) except when
+./CoMeT/benchmarks/parsec/parsec-2.1/pkgs/tools/yasm/src/libyasm/phash.c:29:mix() was built out of 36 single-cycle latency instructions in a 
+./CoMeT/benchmarks/parsec/parsec-2.1/pkgs/tools/yasm/src/libyasm/phash.c:40:  latency instructions into multi-cycle latency instructions.  Still,
+./CoMeT/CHANGELOG:60:  * Add more cache statistics: LRU stack distance historgram, LLC miss latency breakdown
+./CoMeT/CHANGELOG:205:  * [interval] Fix branch resolution latency calculation
+./CoMeT/common/user/sync_api.cc:23:// Defined with C linkage so we cannot return a pair<latency, success> as SyncClient::mutexTrylock does
+./CoMeT/common/user/sync_api.cc:25:// else = latency
+./CoMeT/common/performance_model/performance_model.h:42:   void handleMemoryLatency(SubsecondTime latency, HitWhere::where_t hit_where);
+./CoMeT/common/performance_model/dram_perf_model_nvm.h:22:      SubsecondTime m_total_access_latency;
+./CoMeT/common/performance_model/dynamic_instruction.cc:59:         memory_info[idx].latency = res.latency;
+./CoMeT/common/performance_model/dynamic_instruction.cc:64:         memory_info[idx].latency = 1 * core->getDvfsDomain()->getPeriod(); // 1 cycle latency
+./CoMeT/common/performance_model/fastforward_performance_model.cc:13:   , m_include_memory_latency(Sim()->getCfg()->getBool("perf_model/fast_forward/oneipc/include_memory_latency"))
+./CoMeT/common/performance_model/fastforward_performance_model.cc:37:FastforwardPerformanceModel::incrementElapsedTime(SubsecondTime latency)
+./CoMeT/common/performance_model/fastforward_performance_model.cc:39:   incrementElapsedTime(latency, m_cpiBase);
+./CoMeT/common/performance_model/fastforward_performance_model.cc:43:FastforwardPerformanceModel::incrementElapsedTime(SubsecondTime latency, SubsecondTime &cpiComponent)
+./CoMeT/common/performance_model/fastforward_performance_model.cc:45:   m_fastforwarded_time += latency;
+./CoMeT/common/performance_model/fastforward_performance_model.cc:46:   cpiComponent += latency;
+./CoMeT/common/performance_model/fastforward_performance_model.cc:47:   m_perf->incrementElapsedTime(latency);
+./CoMeT/common/performance_model/fastforward_performance_model.cc:66:FastforwardPerformanceModel::handleMemoryLatency(SubsecondTime latency, HitWhere::where_t hit_where)
+./CoMeT/common/performance_model/fastforward_performance_model.cc:68:   if (m_include_memory_latency)
+./CoMeT/common/performance_model/fastforward_performance_model.cc:69:      incrementElapsedTime(latency, m_cpiDataCache[hit_where]);
+./CoMeT/common/performance_model/performance_models/core_model/core_model_nehalem.cc:17:   // Default instruction latency is one cycle
+./CoMeT/common/performance_model/performance_models/core_model/core_model_nehalem.cc:158:         //LOG_PRINT_ERROR("Don't know the ALU latency for this MicroOp.");
+./CoMeT/common/performance_model/performance_models/core_model/core_model_boom_v1.cc:73:         //LOG_PRINT_ERROR("Don't know the ALU latency for this MicroOp.");
+./CoMeT/common/performance_model/performance_models/micro_op_performance_model.cc:213:         UInt64 memory_cycle_latency = SubsecondTime::divideRounded(memres.latency, insn_period);
+./CoMeT/common/performance_model/performance_models/micro_op_performance_model.cc:218:         m_current_uops[0]->setICacheLatency(memory_cycle_latency);
+./CoMeT/common/performance_model/performance_models/micro_op_performance_model.cc:245:         UInt64 memory_cycle_latency = SubsecondTime::divideRounded(info.latency, insn_period);
+./CoMeT/common/performance_model/performance_models/micro_op_performance_model.cc:250:         //   FIXME: although the microop is squashed and its latency ignored, the cache still sees the access
+./CoMeT/common/performance_model/performance_models/micro_op_performance_model.cc:274:               UInt64 bypass_latency = m_core_model->getBypassLatency(m_current_uops[load_index]);
+./CoMeT/common/performance_model/performance_models/micro_op_performance_model.cc:275:               m_current_uops[load_index]->setExecLatency(memory_cycle_latency + bypass_latency);
+./CoMeT/common/performance_model/performance_models/micro_op_performance_model.cc:309:               UInt64 bypass_latency = m_core_model->getBypassLatency(m_current_uops[store_index]);
+./CoMeT/common/performance_model/performance_models/micro_op_performance_model.cc:310:               m_current_uops[store_index]->setExecLatency(memory_cycle_latency + bypass_latency);
+./CoMeT/common/performance_model/performance_models/micro_op_performance_model.cc:351:      // Do not update the execution latency of a branch instruction
+./CoMeT/common/performance_model/performance_models/micro_op_performance_model.cc:352:      // The interval model will calculate the branch latency
+./CoMeT/common/performance_model/performance_models/micro_op_performance_model.cc:382:   ComponentTime new_latency(m_elapsed_time.getLatencyGenerator()); // Get a new, empty holder for latency
+./CoMeT/common/performance_model/performance_models/micro_op_performance_model.cc:383:   bool latency_out_of_band = false; // If new_latency contains any values not returned from IntervalTimer/RobTimer, we'll need to call synchronize()
+./CoMeT/common/performance_model/performance_models/micro_op_performance_model.cc:386:      uint64_t new_latency_cycles;
+./CoMeT/common/performance_model/performance_models/micro_op_performance_model.cc:387:      boost::tie(new_num_insns, new_latency_cycles) = simulate(m_current_uops);
+./CoMeT/common/performance_model/performance_models/micro_op_performance_model.cc:388:      new_latency.addCycleLatency(new_latency_cycles);
+./CoMeT/common/performance_model/performance_models/micro_op_performance_model.cc:412:      // It's cost needs to be added to the overall latency, and for accuracy
+./CoMeT/common/performance_model/performance_models/micro_op_performance_model.cc:418:      //  Nevertheless, do not add the instruction cost into the interval model because the latency
+./CoMeT/common/performance_model/performance_models/micro_op_performance_model.cc:424:      uint64_t new_latency_cycles;
+./CoMeT/common/performance_model/performance_models/micro_op_performance_model.cc:425:      boost::tie(new_num_insns, new_latency_cycles) = simulate(uops);
+./CoMeT/common/performance_model/performance_models/micro_op_performance_model.cc:426:      new_latency.addCycleLatency(new_latency_cycles);
+./CoMeT/common/performance_model/performance_models/micro_op_performance_model.cc:431:         new_latency.addLatency(insn_cost);
+./CoMeT/common/performance_model/performance_models/micro_op_performance_model.cc:432:         latency_out_of_band = true;
+./CoMeT/common/performance_model/performance_models/micro_op_performance_model.cc:480:      // Long latency load setup
+./CoMeT/common/performance_model/performance_models/micro_op_performance_model.cc:481:      SubsecondTime cost_add_latency_now(SubsecondTime::Zero());
+./CoMeT/common/performance_model/performance_models/micro_op_performance_model.cc:482:      uint32_t cost_add_latency_interval = 0;
+./CoMeT/common/performance_model/performance_models/micro_op_performance_model.cc:485:      // if we are a long latency load (0 == disable)
+./CoMeT/common/performance_model/performance_models/micro_op_performance_model.cc:488:         // Long latency load
+./CoMeT/common/performance_model/performance_models/micro_op_performance_model.cc:489:         cost_add_latency_now = insn_cost;
+./CoMeT/common/performance_model/performance_models/micro_op_performance_model.cc:490:         cost_add_latency_interval = 1;
+./CoMeT/common/performance_model/performance_models/micro_op_performance_model.cc:499:         cost_add_latency_now = SubsecondTime::Zero();
+./CoMeT/common/performance_model/performance_models/micro_op_performance_model.cc:500:         cost_add_latency_interval = SubsecondTime::divideRounded(insn_cost, insn_period.getPeriod());
+./CoMeT/common/performance_model/performance_models/micro_op_performance_model.cc:505:      uop->setExecLatency(cost_add_latency_interval);
+./CoMeT/common/performance_model/performance_models/micro_op_performance_model.cc:535:      uint64_t new_latency_cycles;
+./CoMeT/common/performance_model/performance_models/micro_op_performance_model.cc:536:      boost::tie(new_num_insns, new_latency_cycles) = simulate(uops);
+./CoMeT/common/performance_model/performance_models/micro_op_performance_model.cc:537:      new_latency.addCycleLatency(new_latency_cycles);
+./CoMeT/common/performance_model/performance_models/micro_op_performance_model.cc:540:      if (cost_add_latency_now > SubsecondTime::Zero())
+./CoMeT/common/performance_model/performance_models/micro_op_performance_model.cc:542:         new_latency.addLatency(cost_add_latency_now);
+./CoMeT/common/performance_model/performance_models/micro_op_performance_model.cc:543:         latency_out_of_band = true;
+./CoMeT/common/performance_model/performance_models/micro_op_performance_model.cc:549:      m_cpiMemAccess += cost_add_latency_now;
+./CoMeT/common/performance_model/performance_models/micro_op_performance_model.cc:560:   m_elapsed_time.addLatency(new_latency);
+./CoMeT/common/performance_model/performance_models/micro_op_performance_model.cc:561:   if (latency_out_of_band)
+./CoMeT/common/performance_model/performance_models/micro_op_performance_model.cc:565:   fprintf(m_cycle_log, "[%s] latency=%d\n", itostr(m_elapsed_time).c_str(), itostr(new_latency.getElapsedTime()).c_str());
+./CoMeT/common/performance_model/performance_models/rob_performance_model/smt_timer.cc:292:   // we should not return any latency from simulate() since that will be huge (this->now has advanced,
+./CoMeT/common/performance_model/performance_models/rob_performance_model/smt_timer.cc:297:   // simulate() to not return any latency until RobSmtTimer::synchronize() was called which updates
+./CoMeT/common/performance_model/performance_models/rob_performance_model/rob_smt_timer.h:100:         SubsecondTime m_loads_latency;
+./CoMeT/common/performance_model/performance_models/rob_performance_model/rob_smt_timer.h:102:         SubsecondTime m_stores_latency;
+./CoMeT/common/performance_model/performance_models/rob_performance_model/rob_smt_timer.cc:188:   thread->m_loads_latency = SubsecondTime::Zero();
+./CoMeT/common/performance_model/performance_models/rob_performance_model/rob_smt_timer.cc:190:   thread->m_stores_latency = SubsecondTime::Zero();
+./CoMeT/common/performance_model/performance_models/rob_performance_model/rob_smt_timer.cc:193:   registerStatsMetric("rob_timer", core->getId(), "loads-latency", &thread->m_loads_latency);
+./CoMeT/common/performance_model/performance_models/rob_performance_model/rob_smt_timer.cc:195:   registerStatsMetric("rob_timer", core->getId(), "stores-latency", &thread->m_stores_latency);
+./CoMeT/common/performance_model/performance_models/rob_performance_model/rob_smt_timer.cc:489:   // Return latency from previous execute() calls
+./CoMeT/common/performance_model/performance_models/rob_performance_model/rob_smt_timer.cc:500:         std::cout<<"** ["<<int(thread_id)<<"] return "<<returnLat<<" latency cycles"<<std::endl<<std::endl<<std::endl;
+./CoMeT/common/performance_model/performance_models/rob_performance_model/rob_smt_timer.cc:575:            // We just took the latency for this instruction, now dispatch it
+./CoMeT/common/performance_model/performance_models/rob_performance_model/rob_smt_timer.cc:767:      uint64_t latency = SubsecondTime::divideRounded(res.latency, now.getPeriod());
+./CoMeT/common/performance_model/performance_models/rob_performance_model/rob_smt_timer.cc:769:      uop.setExecLatency(uop.getExecLatency() + latency); // execlatency already contains bypass latency
+./CoMeT/common/performance_model/performance_models/rob_performance_model/rob_smt_timer.cc:784:      thread->m_loads_latency += uop.getExecLatency() * now.getPeriod();
+./CoMeT/common/performance_model/performance_models/rob_performance_model/rob_smt_timer.cc:789:      thread->m_stores_latency += uop.getExecLatency() * now.getPeriod();
+./CoMeT/common/performance_model/performance_models/rob_performance_model/rob_smt_timer.cc:814:      std::cout<<"["<<int(thread_num)<<"] ISSUE    "<<entry->uop->getMicroOp()->toShortString()<<"   latency="<<uop.getExecLatency()<<std::endl;
+./CoMeT/common/performance_model/performance_models/rob_performance_model/rob_smt_timer.cc:952:         // Calculate memory-level parallelism (MLP) for long-latency loads (but ignore overlapped misses)
+./CoMeT/common/performance_model/performance_models/rob_performance_model/rob_smt_timer.cc:963:            // latency misses (don't account cycles twice).
+./CoMeT/common/performance_model/performance_models/rob_performance_model/rob_smt_timer.cc:1139:   SubsecondTime latency = SubsecondTime::Zero();
+./CoMeT/common/performance_model/performance_models/rob_performance_model/rob_smt_timer.cc:1194:      latency += now.getPeriod();
+./CoMeT/common/performance_model/performance_models/rob_performance_model/rob_smt_timer.cc:1199:      latency += skip;
+./CoMeT/common/performance_model/performance_models/rob_performance_model/rob_smt_timer.cc:1210:   return latency;
+./CoMeT/common/performance_model/performance_models/rob_performance_model/rob_timer.cc:129:   m_loads_latency = SubsecondTime::Zero();
+./CoMeT/common/performance_model/performance_models/rob_performance_model/rob_timer.cc:131:   m_stores_latency = SubsecondTime::Zero();
+./CoMeT/common/performance_model/performance_models/rob_performance_model/rob_timer.cc:134:   registerStatsMetric("rob_timer", core->getId(), "loads-latency", &m_loads_latency);
+./CoMeT/common/performance_model/performance_models/rob_performance_model/rob_timer.cc:136:   registerStatsMetric("rob_timer", core->getId(), "stores-latency", &m_stores_latency);
+./CoMeT/common/performance_model/performance_models/rob_performance_model/rob_timer.cc:395:      SubsecondTime latency;
+./CoMeT/common/performance_model/performance_models/rob_performance_model/rob_timer.cc:396:      execute(instructionsExecuted, latency);
+./CoMeT/common/performance_model/performance_models/rob_performance_model/rob_timer.cc:398:      totalLat += latency;
+./CoMeT/common/performance_model/performance_models/rob_performance_model/rob_timer.cc:399:      if (latency == SubsecondTime::Zero())
+./CoMeT/common/performance_model/performance_models/rob_performance_model/rob_timer.cc:469:               // We just took the latency for this instruction, now dispatch it
+./CoMeT/common/performance_model/performance_models/rob_performance_model/rob_timer.cc:585:      uint64_t latency = SubsecondTime::divideRounded(res.latency, now.getPeriod());
+./CoMeT/common/performance_model/performance_models/rob_performance_model/rob_timer.cc:587:      uop.setExecLatency(uop.getExecLatency() + latency); // execlatency already contains bypass latency
+./CoMeT/common/performance_model/performance_models/rob_performance_model/rob_timer.cc:606:      m_loads_latency += uop.getExecLatency() * now.getPeriod();
+./CoMeT/common/performance_model/performance_models/rob_performance_model/rob_timer.cc:611:      m_stores_latency += uop.getExecLatency() * now.getPeriod();
+./CoMeT/common/performance_model/performance_models/rob_performance_model/rob_timer.cc:636:      std::cout<<"ISSUE    "<<entry->uop->getMicroOp()->toShortString()<<"   latency="<<uop.getExecLatency()<<std::endl;
+./CoMeT/common/performance_model/performance_models/rob_performance_model/rob_timer.cc:775:         // Calculate memory-level parallelism (MLP) for long-latency loads (but ignore overlapped misses)
+./CoMeT/common/performance_model/performance_models/rob_performance_model/rob_timer.cc:786:            // latency misses (don't account cycles twice).
+./CoMeT/common/performance_model/performance_models/rob_performance_model/rob_timer.cc:874:void RobTimer::execute(uint64_t& instructionsExecuted, SubsecondTime& latency)
+./CoMeT/common/performance_model/performance_models/rob_performance_model/rob_timer.cc:876:   latency = SubsecondTime::Zero();
+./CoMeT/common/performance_model/performance_models/rob_performance_model/rob_timer.cc:938:      latency += now.getPeriod();
+./CoMeT/common/performance_model/performance_models/rob_performance_model/rob_timer.cc:943:      latency += skip;
+./CoMeT/common/performance_model/performance_models/rob_performance_model/rob_timer.cc:952:   *cpiComponent += latency;
+./CoMeT/common/performance_model/performance_models/rob_performance_model/rob_timer.h:105:   SubsecondTime m_loads_latency;
+./CoMeT/common/performance_model/performance_models/rob_performance_model/rob_timer.h:107:   SubsecondTime m_stores_latency;
+./CoMeT/common/performance_model/performance_models/rob_performance_model/rob_timer.h:143:   void execute(uint64_t& instructionsExecuted, SubsecondTime& latency);
+./CoMeT/common/performance_model/performance_models/oneipc_performance_model.cc:18:   /* Maximum latency which is assumed to be completely overlapped. L1-D hit latency should be a good value. */
+./CoMeT/common/performance_model/performance_models/oneipc_performance_model.cc:19:   m_latency_cutoff = Sim()->getCfg()->getIntArray("perf_model/core/oneipc/latency_cutoff", core->getId());
+./CoMeT/common/performance_model/performance_models/oneipc_performance_model.cc:62:            if (info.latency
+./CoMeT/common/performance_model/performance_models/oneipc_performance_model.cc:63:                  > ComponentLatency(getCore()->getDvfsDomain(), m_latency_cutoff).getLatency())
+./CoMeT/common/performance_model/performance_models/oneipc_performance_model.cc:64:               cost.addLatency(info.latency);
+./CoMeT/common/performance_model/performance_models/oneipc_performance_model.cc:69:            // ignore write latency
+./CoMeT/common/performance_model/performance_models/oneipc_performance_model.cc:105:   // Arithmetic instructions etc., are all "not modeled" == unit cycle latency
+./CoMeT/common/performance_model/performance_models/oneipc_performance_model.cc:106:   // Dynamic instructions (SYNC, MEMACCESS, etc.): normal latency
+./CoMeT/common/performance_model/performance_models/interval_performance_model/interval_timer.cc:48:   // Granularity of memory dependencies on long-latency loads, in bytes
+./CoMeT/common/performance_model/performance_models/interval_performance_model/interval_timer.cc:179:// Simulate a collection of micro-ops and report the number of instructions executed and the latency
+./CoMeT/common/performance_model/performance_models/interval_performance_model/interval_timer.cc:182:   uint64_t total_instructions_executed = 0, total_latency = 0;
+./CoMeT/common/performance_model/performance_models/interval_performance_model/interval_timer.cc:215:         uint64_t instructions_executed, latency;
+./CoMeT/common/performance_model/performance_models/interval_performance_model/interval_timer.cc:216:         boost::tie(instructions_executed, latency) = dispatchWindow();
+./CoMeT/common/performance_model/performance_models/interval_performance_model/interval_timer.cc:218:         total_latency += latency;
+./CoMeT/common/performance_model/performance_models/interval_performance_model/interval_timer.cc:222:   return boost::tuple<uint64_t,uint64_t>(total_instructions_executed, total_latency);
+./CoMeT/common/performance_model/performance_models/interval_performance_model/interval_timer.cc:227:   uint64_t latency = 0;
+./CoMeT/common/performance_model/performance_models/interval_performance_model/interval_timer.cc:242:      uint64_t instruction_latency = dispatchInstruction(micro_op, continue_dispatching);
+./CoMeT/common/performance_model/performance_models/interval_performance_model/interval_timer.cc:243:      latency += instruction_latency;
+./CoMeT/common/performance_model/performance_models/interval_performance_model/interval_timer.cc:255:      if (latency > 16)
+./CoMeT/common/performance_model/performance_models/interval_performance_model/interval_timer.cc:264:         fprintf(m_insn_log, "[%ld,%ld] %s latency=%d\n", cycle_count, insn_count, opcode_name, instruction_latency);
+./CoMeT/common/performance_model/performance_models/interval_performance_model/interval_timer.cc:271:   // The minimum latency for dispatching these micro-ops is 1 cycle
+./CoMeT/common/performance_model/performance_models/interval_performance_model/interval_timer.cc:273:   if (latency == 0)
+./CoMeT/common/performance_model/performance_models/interval_performance_model/interval_timer.cc:301:      latency = 1;
+./CoMeT/common/performance_model/performance_models/interval_performance_model/interval_timer.cc:307:   return boost::tuple<uint64_t,uint64_t>(instructions_executed, latency);
+./CoMeT/common/performance_model/performance_models/interval_performance_model/interval_timer.cc:350:      uint64_t latency = SubsecondTime::divideRounded(res.latency, m_core->getDvfsDomain()->getPeriod());
+./CoMeT/common/performance_model/performance_models/interval_performance_model/interval_timer.cc:351:      micro_op.getDynMicroOp()->setExecLatency(micro_op.getDynMicroOp()->getExecLatency() + latency); // execlatency already contains bypass latency
+./CoMeT/common/performance_model/performance_models/interval_performance_model/interval_timer.cc:361:   uint64_t latency = 0;
+./CoMeT/common/performance_model/performance_models/interval_performance_model/interval_timer.cc:372:      uint64_t icache_latency = micro_op.getDynMicroOp()->getICacheLatency();
+./CoMeT/common/performance_model/performance_models/interval_performance_model/interval_timer.cc:373:      latency += icache_latency;
+./CoMeT/common/performance_model/performance_models/interval_performance_model/interval_timer.cc:375:      m_windows->clearOldWindow(micro_op.cptail + icache_latency);
+./CoMeT/common/performance_model/performance_models/interval_performance_model/interval_timer.cc:379:      m_cpiInstructionCache[micro_op.getDynMicroOp()->getICacheHitWhere()] += icache_latency * micro_op.getDynMicroOp()->getPeriod();
+./CoMeT/common/performance_model/performance_models/interval_performance_model/interval_timer.cc:386:         uint64_t bpred_latency = m_branch_misprediction_penalty + m_windows->calculateBranchResolutionLatency();
+./CoMeT/common/performance_model/performance_models/interval_performance_model/interval_timer.cc:387:         latency += bpred_latency;
+./CoMeT/common/performance_model/performance_models/interval_performance_model/interval_timer.cc:390:         m_windows->clearOldWindow(micro_op.cptail + bpred_latency);
+./CoMeT/common/performance_model/performance_models/interval_performance_model/interval_timer.cc:392:         m_cpiBranchPredictor += bpred_latency * micro_op.getDynMicroOp()->getPeriod();
+./CoMeT/common/performance_model/performance_models/interval_performance_model/interval_timer.cc:399:      uint64_t serialize_latency = flushLatency + micro_op.getDynMicroOp()->getExecLatency();
+./CoMeT/common/performance_model/performance_models/interval_performance_model/interval_timer.cc:400:      latency += serialize_latency;
+./CoMeT/common/performance_model/performance_models/interval_performance_model/interval_timer.cc:403:      m_totalSerializationLatency += serialize_latency;
+./CoMeT/common/performance_model/performance_models/interval_performance_model/interval_timer.cc:404:      m_cpiSerialization += serialize_latency * micro_op.getDynMicroOp()->getPeriod();
+./CoMeT/common/performance_model/performance_models/interval_performance_model/interval_timer.cc:417:      // We need to use the maxProd, and we can't just add latencies, because we don't have a concept of latency
+./CoMeT/common/performance_model/performance_models/interval_performance_model/interval_timer.cc:421:      //   uint64_t mfence_latency = cycle_to_wait_until - current_cycle;
+./CoMeT/common/performance_model/performance_models/interval_performance_model/interval_timer.cc:423:      //   m_totalMfenceLatency += mfence_latency;
+./CoMeT/common/performance_model/performance_models/interval_performance_model/interval_timer.cc:427:      updateCriticalPath(micro_op, latency);
+./CoMeT/common/performance_model/performance_models/interval_performance_model/interval_timer.cc:431:      uint64_t exec_latency = micro_op.getDynMicroOp()->getExecLatency();
+./CoMeT/common/performance_model/performance_models/interval_performance_model/interval_timer.cc:441:            uint64_t dcache_latency = exec_latency;
+./CoMeT/common/performance_model/performance_models/interval_performance_model/interval_timer.cc:442:            // Long latency loads trump all other latencies
+./CoMeT/common/performance_model/performance_models/interval_performance_model/interval_timer.cc:448:               contention_exec_cycle = m_loadstore_contention.getBarrierCompletionTime(sched_cycle, dcache_latency);
+./CoMeT/common/performance_model/performance_models/interval_performance_model/interval_timer.cc:450:               contention_exec_cycle = m_loadstore_contention.getCompletionTime(sched_cycle, dcache_latency);
+./CoMeT/common/performance_model/performance_models/interval_performance_model/interval_timer.cc:452:            // Calculate our new latency from the load contention completion time
+./CoMeT/common/performance_model/performance_models/interval_performance_model/interval_timer.cc:453:            uint64_t reswin_extra_latency = sched_cycle - dispatch_cycle;
+./CoMeT/common/performance_model/performance_models/interval_performance_model/interval_timer.cc:454:            uint64_t contention_extra_latency = contention_exec_cycle - sched_cycle;
+./CoMeT/common/performance_model/performance_models/interval_performance_model/interval_timer.cc:455:            uint64_t long_latency_load_latency = reswin_extra_latency + contention_extra_latency; // dcache_latency is already taken into account in contention_extra_latency
+./CoMeT/common/performance_model/performance_models/interval_performance_model/interval_timer.cc:456:            latency += long_latency_load_latency;
+./CoMeT/common/performance_model/performance_models/interval_performance_model/interval_timer.cc:473:            fprintf(m_insn_log, ") latency=%ld (%ld+%ld(%ld))\n", latency, reswin_extra_latency, contention_extra_latency, dcache_latency);
+./CoMeT/common/performance_model/performance_models/interval_performance_model/interval_timer.cc:479:            m_windows->clearOldWindow(micro_op.getExecTime() + long_latency_load_latency);
+./CoMeT/common/performance_model/performance_models/interval_performance_model/interval_timer.cc:484:            m_numTotalLongLatencyLoadLatency+=long_latency_load_latency;
+./CoMeT/common/performance_model/performance_models/interval_performance_model/interval_timer.cc:487:            m_cpiDataCache[micro_op.getDynMicroOp()->getDCacheHitWhere()] += long_latency_load_latency * micro_op.getDynMicroOp()->getPeriod();
+./CoMeT/common/performance_model/performance_models/interval_performance_model/interval_timer.cc:491:            // Non long-latency-load load operations
+./CoMeT/common/performance_model/performance_models/interval_performance_model/interval_timer.cc:492:            uint64_t dcache_latency = exec_latency;
+./CoMeT/common/performance_model/performance_models/interval_performance_model/interval_timer.cc:498:               contentionExecTime = m_loadstore_contention.getBarrierCompletionTime(sched_cycle, dcache_latency);
+./CoMeT/common/performance_model/performance_models/interval_performance_model/interval_timer.cc:500:               contentionExecTime = m_loadstore_contention.getCompletionTime(sched_cycle, dcache_latency);
+./CoMeT/common/performance_model/performance_models/interval_performance_model/interval_timer.cc:502:            /* doesn't block window but adds to the critical path (unless long-latency). */
+./CoMeT/common/performance_model/performance_models/interval_performance_model/interval_timer.cc:503:            updateCriticalPath(micro_op, latency);
+./CoMeT/common/performance_model/performance_models/interval_performance_model/interval_timer.cc:512:            uint64_t done = now + exec_latency;
+./CoMeT/common/performance_model/performance_models/interval_performance_model/interval_timer.cc:516:            m_outstandingLongLatencyInsns += exec_latency;
+./CoMeT/common/performance_model/performance_models/interval_performance_model/interval_timer.cc:519:            // latency misses (don't account cycles twice).
+./CoMeT/common/performance_model/performance_models/interval_performance_model/interval_timer.cc:533:         uint64_t store_latency = exec_latency;
+./CoMeT/common/performance_model/performance_models/interval_performance_model/interval_timer.cc:536:         uint64_t bypass_latency = m_core_model->getBypassLatency(micro_op.getDynMicroOp());
+./CoMeT/common/performance_model/performance_models/interval_performance_model/interval_timer.cc:537:         uint64_t data_ready_cycle = sched_cycle + bypass_latency + 1; // This store result will be ready to use one cycle later
+./CoMeT/common/performance_model/performance_models/interval_performance_model/interval_timer.cc:539:         updateCriticalPath(micro_op, latency);
+./CoMeT/common/performance_model/performance_models/interval_performance_model/interval_timer.cc:542:         uint64_t exec_time_cycle = sched_cycle + store_latency; // For future instructions that depend on this instruction's result
+./CoMeT/common/performance_model/performance_models/interval_performance_model/interval_timer.cc:551:         micro_op.setExecTime(dispatch_cycle + exec_latency);
+./CoMeT/common/performance_model/performance_models/interval_performance_model/interval_timer.cc:553:         updateCriticalPath(micro_op, latency);
+./CoMeT/common/performance_model/performance_models/interval_performance_model/interval_timer.cc:557:   return latency;
+./CoMeT/common/performance_model/performance_models/interval_performance_model/interval_timer.cc:562: * by more than the long-latency cut-off, clear the window instead.
+./CoMeT/common/performance_model/performance_models/interval_performance_model/interval_timer.cc:564:void IntervalTimer::updateCriticalPath(Windows::WindowEntry& micro_op, uint64_t& latency)
+./CoMeT/common/performance_model/performance_models/interval_performance_model/interval_timer.cc:573:      latency += lll;
+./CoMeT/common/performance_model/performance_models/interval_performance_model/interval_timer.cc:617:               // Dependee depends on the long-latency load blocking the window: do not issue this uop now
+./CoMeT/common/performance_model/performance_models/interval_performance_model/interval_timer.cc:623:               // Our dependee is independent of the long-latency load blocking the window,
+./CoMeT/common/performance_model/performance_models/interval_performance_model/interval_timer.cc:624:               // but it is a long-latency event by itself: do not issue this uop now
+./CoMeT/common/performance_model/performance_models/interval_performance_model/interval_timer.cc:625:               // Since the window head is independent and long-latency,
+./CoMeT/common/performance_model/performance_models/interval_performance_model/interval_timer.cc:630:            // else: our dependee is independent of the long-latency load blocking the window,
+./CoMeT/common/performance_model/performance_models/interval_performance_model/interval_timer.cc:631:            // and is not a long-latency load in itself, which means it will complete under the original LLL.
+./CoMeT/common/performance_model/performance_models/interval_performance_model/interval_timer.cc:632:            // Therefore, we can also be hidden under the long-latency load which makes us not dependent.
+./CoMeT/common/performance_model/performance_models/interval_performance_model/interval_timer.cc:641:            // This load accesses the same cache line as the long-latency load that's blocking the ROB
+./CoMeT/common/performance_model/performance_models/interval_performance_model/interval_timer.cc:644:            // Model this by making us dependent on the long-latency load.
+./CoMeT/common/performance_model/performance_models/interval_performance_model/interval_timer.cc:657:          * if long latency miss -> mark as independent miss
+./CoMeT/common/performance_model/performance_models/interval_performance_model/interval_timer.cc:658:          * if short latency -> check if delayed hit and also mark as independent (secondary) miss
+./CoMeT/common/performance_model/performance_models/interval_performance_model/interval_timer.h:43:   // simulate() returns (instructions_executed, latency)
+./CoMeT/common/performance_model/performance_models/interval_performance_model/interval_timer.h:48:   // NOTE: These events are supposed to be long-latency, so we may want to flush the windows here as well
+./CoMeT/common/performance_model/performance_models/interval_performance_model/interval_timer.h:53:   // dispatchWindow() returns (instructions_executed, latency)
+./CoMeT/common/performance_model/performance_models/interval_performance_model/interval_timer.h:57:   // dispatchInstruction() returns instruction_latency
+./CoMeT/common/performance_model/performance_models/interval_performance_model/interval_timer.h:59:   void updateCriticalPath(Windows::WindowEntry& microOp, uint64_t& latency);
+./CoMeT/common/performance_model/performance_models/interval_performance_model/interval_timer.h:72:   UInt64 m_lll_dep_mask; // Memory access dependency granularity for long-latency loads
+./CoMeT/common/performance_model/performance_models/interval_performance_model/interval_timer.h:77:   // For LOCKed instructions, we need to determine the latency of all loads and stores
+./CoMeT/common/performance_model/performance_models/interval_performance_model/windows.h:52:      /** The latency of the microInstruction can be overlapped by a long latency load. The flag states what is overlapped: a icache miss, a branch mispredict or a dcache miss. */
+./CoMeT/common/performance_model/performance_models/interval_performance_model/windows.cc:304:         // Instead, the caller should add the long latency directly (and attribute it) and call clearOldWindow()
+./CoMeT/common/performance_model/performance_models/interval_performance_model/windows.cc:354:   uint32_t br_resolution_latency = 0;
+./CoMeT/common/performance_model/performance_models/interval_performance_model/windows.cc:384:         br_resolution_latency = std::max(br_resolution_latency, m_exec_time_map[i]);
+./CoMeT/common/performance_model/performance_models/interval_performance_model/windows.cc:390:   return br_resolution_latency;
+./CoMeT/common/performance_model/performance_models/oneipc_performance_model.h:17:   UInt64 m_latency_cutoff;
+./CoMeT/common/performance_model/performance_models/rob_performance_model.cc:22:   uint64_t ins; SubsecondTime latency;
+./CoMeT/common/performance_model/performance_models/rob_performance_model.cc:23:   boost::tie(ins, latency) = rob_timer.simulate(insts);
+./CoMeT/common/performance_model/performance_models/rob_performance_model.cc:25:   return boost::tuple<uint64_t,uint64_t>(ins, SubsecondTime::divideRounded(latency, m_elapsed_time.getPeriod()));
+./CoMeT/common/performance_model/performance_models/rob_smt_performance_model.cc:57:   uint64_t ins; SubsecondTime latency;
+./CoMeT/common/performance_model/performance_models/rob_smt_performance_model.cc:58:   boost::tie(ins, latency) = m_rob_timer->returnLatency(m_thread_id);
+./CoMeT/common/performance_model/performance_models/rob_smt_performance_model.cc:60:   return boost::tuple<uint64_t,uint64_t>(ins, SubsecondTime::divideRounded(latency, m_elapsed_time.getPeriod()));
+./CoMeT/common/performance_model/performance_models/micro_op/dynamic_micro_op.h:43:      /** The latency of the instruction. */
+./CoMeT/common/performance_model/performance_models/micro_op/dynamic_micro_op.h:126:      void setExecLatency(uint32_t latency) { this->execLatency = latency; }
+./CoMeT/common/performance_model/performance_models/micro_op/dynamic_micro_op.h:138:      void setICacheLatency(uint32_t _latency) { iCacheLatency = _latency; };
+./CoMeT/common/performance_model/performance_models/micro_op/dynamic_micro_op.cc:134:   // If we are enabled, indicate that this is a long latency load if the latency
+./CoMeT/common/performance_model/shmem_perf_model.cc:11:   m_total_memory_access_latency(SubsecondTime::Zero())
+./CoMeT/common/performance_model/shmem_perf_model.cc:73:      atomic_add_subsecondtime(m_total_memory_access_latency, shmem_time);
+./CoMeT/common/performance_model/fastforward_performance_model.h:11:      const bool m_include_memory_latency;
+./CoMeT/common/performance_model/fastforward_performance_model.h:29:      void incrementElapsedTime(SubsecondTime latency);
+./CoMeT/common/performance_model/fastforward_performance_model.h:30:      void incrementElapsedTime(SubsecondTime latency, SubsecondTime &cpiComponent);
+./CoMeT/common/performance_model/fastforward_performance_model.h:33:      void handleMemoryLatency(SubsecondTime latency, HitWhere::where_t hit_where);
+./CoMeT/common/performance_model/dram_perf_model_readwrite.h:21:      SubsecondTime m_total_access_latency;
+./CoMeT/common/performance_model/dram_perf_model_constant.cc:13:   This file has been extended to support a low power access latency,
+./CoMeT/common/performance_model/dram_perf_model_constant.cc:23:   m_total_access_latency(SubsecondTime::Zero())
+./CoMeT/common/performance_model/dram_perf_model_constant.cc:25:   m_dram_access_cost = SubsecondTime::FS() * static_cast<uint64_t>(TimeConverter<float>::NStoFS(Sim()->getCfg()->getFloat("perf_model/dram/latency"))); // Operate in fs for higher precision before converting to uint64_t/SubsecondTime
+./CoMeT/common/performance_model/dram_perf_model_constant.cc:28:   m_dram_access_cost_lowpower  = SubsecondTime::FS() * static_cast<uint64_t>(TimeConverter<float>::NStoFS(Sim()->getCfg()->getFloat("perf_model/dram/latency_lowpower"))); // Operate in fs for higher precision before converting to uint64_t/SubsecondTime
+./CoMeT/common/performance_model/dram_perf_model_constant.cc:36:   registerStatsMetric("dram", core_id, "total-access-latency", &m_total_access_latency);
+./CoMeT/common/performance_model/dram_perf_model_constant.cc:76:   SubsecondTime access_latency;
+./CoMeT/common/performance_model/dram_perf_model_constant.cc:81:      access_latency = queue_delay + processing_time + m_dram_access_cost_lowpower;
+./CoMeT/common/performance_model/dram_perf_model_constant.cc:85:      access_latency = queue_delay + processing_time + m_dram_access_cost;
+./CoMeT/common/performance_model/dram_perf_model_constant.cc:95:   m_total_access_latency += access_latency;
+./CoMeT/common/performance_model/dram_perf_model_constant.cc:98:   return access_latency;
+./CoMeT/common/performance_model/dram_perf_model_constant.h:19:      SubsecondTime m_total_access_latency;
+./CoMeT/common/performance_model/dram_perf_model_normal.cc:14:   m_total_access_latency(SubsecondTime::Zero())
+./CoMeT/common/performance_model/dram_perf_model_normal.cc:16:   SubsecondTime dram_latency = SubsecondTime::FS() * static_cast<uint64_t>(TimeConverter<float>::NStoFS(Sim()->getCfg()->getFloat("perf_model/dram/latency"))); // Operate in fs for higher precision before converting to uint64_t/SubsecondTime
+./CoMeT/common/performance_model/dram_perf_model_normal.cc:17:   SubsecondTime dram_latency_stddev = SubsecondTime::FS() * static_cast<uint64_t>(TimeConverter<float>::NStoFS(Sim()->getCfg()->getFloat("perf_model/dram/normal/standard_deviation")));
+./CoMeT/common/performance_model/dram_perf_model_normal.cc:19:   m_dram_access_cost = new NormalTimeDistribution(dram_latency, dram_latency_stddev);
+./CoMeT/common/performance_model/dram_perf_model_normal.cc:27:   registerStatsMetric("dram", core_id, "total-access-latency", &m_total_access_latency);
+./CoMeT/common/performance_model/dram_perf_model_normal.cc:66:   SubsecondTime access_latency = queue_delay + processing_time + dram_access_cost;
+./CoMeT/common/performance_model/dram_perf_model_normal.cc:76:   m_total_access_latency += access_latency;
+./CoMeT/common/performance_model/dram_perf_model_normal.cc:79:   return access_latency;
+./CoMeT/common/performance_model/dram_perf_model_nvm.cc:17:   m_total_access_latency(SubsecondTime::Zero())
+./CoMeT/common/performance_model/dram_perf_model_nvm.cc:19:   m_dram_read_access_cost = SubsecondTime::FS() * static_cast<uint64_t>(TimeConverter<float>::NStoFS(Sim()->getCfg()->getFloat("perf_model/dram/read_latency"))); // Operate in fs for higher precision before converting to uint64_t/SubsecondTime
+./CoMeT/common/performance_model/dram_perf_model_nvm.cc:20:   m_dram_write_access_cost = SubsecondTime::FS() * static_cast<uint64_t>(TimeConverter<float>::NStoFS(Sim()->getCfg()->getFloat("perf_model/dram/write_latency"))); // Operate in fs for higher precision before converting to uint64_t/SubsecondTime
+./CoMeT/common/performance_model/dram_perf_model_nvm.cc:30:   registerStatsMetric("dram", core_id, "total-access-latency", &m_total_access_latency);
+./CoMeT/common/performance_model/dram_perf_model_nvm.cc:93:   SubsecondTime access_latency;
+./CoMeT/common/performance_model/dram_perf_model_nvm.cc:97:      access_latency = queue_delay + processing_time + m_dram_read_access_cost;
+./CoMeT/common/performance_model/dram_perf_model_nvm.cc:101:      access_latency = queue_delay + processing_time + m_dram_write_access_cost;
+./CoMeT/common/performance_model/dram_perf_model_nvm.cc:119:   m_total_access_latency += access_latency;
+./CoMeT/common/performance_model/dram_perf_model_nvm.cc:125:   return access_latency;
+./CoMeT/common/performance_model/contention_model.cc:171:      /* Out of order packet. Assume no congestion, only transfer latency. */
+./CoMeT/common/performance_model/dram_perf_model_readwrite.cc:17:   m_total_access_latency(SubsecondTime::Zero())
+./CoMeT/common/performance_model/dram_perf_model_readwrite.cc:19:   m_dram_access_cost = SubsecondTime::FS() * static_cast<uint64_t>(TimeConverter<float>::NStoFS(Sim()->getCfg()->getFloat("perf_model/dram/latency"))); // Operate in fs for higher precision before converting to uint64_t/SubsecondTime
+./CoMeT/common/performance_model/dram_perf_model_readwrite.cc:29:   registerStatsMetric("dram", core_id, "total-access-latency", &m_total_access_latency);
+./CoMeT/common/performance_model/dram_perf_model_readwrite.cc:85:   SubsecondTime access_latency = queue_delay + processing_time + m_dram_access_cost;
+./CoMeT/common/performance_model/dram_perf_model_readwrite.cc:95:   m_total_access_latency += access_latency;
+./CoMeT/common/performance_model/dram_perf_model_readwrite.cc:101:   return access_latency;
+./CoMeT/common/performance_model/queue_model_windowed_mg1.cc:40:      // If requesters do not throttle based on returned latency, it's their problem, not ours
+./CoMeT/common/performance_model/queue_model_windowed_mg1.cc:46:      // Our memory is limited in time to m_window_size. It would be strange to return more latency than that.
+./CoMeT/common/performance_model/shmem_perf_model.h:26:      SubsecondTime m_total_memory_access_latency;
+./CoMeT/common/performance_model/performance_model.cc:124:void PerformanceModel::handleMemoryLatency(SubsecondTime latency, HitWhere::where_t hit_where)
+./CoMeT/common/performance_model/performance_model.cc:128:      m_fastforward_model->handleMemoryLatency(latency, hit_where);
+./CoMeT/common/performance_model/performance_model.cc:212:      // Keep track of the type of Sync instruction and it's latency to calculate CPI numbers
+./CoMeT/common/performance_model/dram_perf_model_normal.h:19:      SubsecondTime m_total_access_latency;
+./CoMeT/common/performance_model/dynamic_instruction.h:36:         SubsecondTime latency;
+./CoMeT/common/performance_model/dynamic_instruction.h:69:         memory_info[num_memory].latency = l;
+./CoMeT/common/system/dvfs_manager.cc:18:   m_transition_latency = SubsecondTime::NS() * Sim()->getCfg()->getInt("dvfs/transition_latency");
+./CoMeT/common/system/dvfs_manager.cc:86:         /* queue a fake instruction that will account for the transition latency */
+./CoMeT/common/system/dvfs_manager.cc:87:         PseudoInstruction *i = new DelayInstruction(m_transition_latency, DelayInstruction::DVFS_TRANSITION);
+./CoMeT/common/system/pthread_emu.cc:127:   SubsecondTime delay = CarbonMutexLock((carbon_mutex_t*) mux, lat.latency);
+./CoMeT/common/system/pthread_emu.cc:137:   updateState(core, STATE_INREGION, delay + lat.latency + lat1.latency);
+./CoMeT/common/system/pthread_emu.cc:139:   pthreadCount(PTHREAD_MUTEX_LOCK, core, delay, lat.latency + lat1.latency);
+./CoMeT/common/system/pthread_emu.cc:155:   if (res == SubsecondTime::MaxTime()) updateState(core, STATE_RUNNING, lat.latency);
+./CoMeT/common/system/pthread_emu.cc:156:   else updateState(core, STATE_INREGION, lat.latency);
+./CoMeT/common/system/pthread_emu.cc:158:   pthreadCount(PTHREAD_MUTEX_TRYLOCK, core, res == SubsecondTime::MaxTime() ? SubsecondTime::Zero() : res, lat.latency);
+./CoMeT/common/system/pthread_emu.cc:172:   SubsecondTime delay = CarbonMutexUnlock((carbon_mutex_t*) mux, lat.latency);
+./CoMeT/common/system/pthread_emu.cc:177:      // TODO: the latency hit for this should actually be while still holding the lock.
+./CoMeT/common/system/pthread_emu.cc:178:      //   But we can't request the latency until we've contacted the server (which already releases the lock) to tell us whether it's contended
+./CoMeT/common/system/pthread_emu.cc:184:   updateState(core, STATE_RUNNING, delay + lat.latency + lat1.latency);
+./CoMeT/common/system/pthread_emu.cc:186:   pthreadCount(PTHREAD_MUTEX_UNLOCK, core, delay, lat.latency + lat1.latency);
+./CoMeT/common/system/pthread_emu.cc:221:   updateState(core, STATE_RUNNING, delay + lat1.latency + lat2.latency);
+./CoMeT/common/system/pthread_emu.cc:223:   pthreadCount(PTHREAD_COND_WAIT, core, delay, lat1.latency + lat2.latency);
+./CoMeT/common/system/pthread_emu.cc:239:   pthreadCount(PTHREAD_COND_SIGNAL, core, delay, lat.latency);
+./CoMeT/common/system/pthread_emu.cc:255:   pthreadCount(PTHREAD_COND_BROADCAST, core, delay, lat.latency);
+./CoMeT/common/system/pthread_emu.cc:295:   updateState(core, STATE_RUNNING, delay + lat.latency);
+./CoMeT/common/system/pthread_emu.cc:297:   pthreadCount(PTHREAD_BARRIER_WAIT, core, delay, lat.latency);
+./CoMeT/common/system/dvfs_manager.h:29:   SubsecondTime m_transition_latency;
+./CoMeT/common/network/network_model_magic.cc:13:   _latency(Sim()->getDvfsManager()->getCoreDomain(getNetwork()->getCore()->getId()), 1)
+./CoMeT/common/network/network_model_magic.cc:19:   // A latency of '1'
+./CoMeT/common/network/network_model_magic.cc:29:         h.time = pkt.time + _latency.getLatency();
+./CoMeT/common/network/network_model_magic.cc:39:      h.time = pkt.time + _latency.getLatency();
+./CoMeT/common/network/network_model_emesh_hop_counter.h:41:   SubsecondTime _total_latency;
+./CoMeT/common/network/network_model_emesh_hop_by_hop.cc:36:   m_total_packet_latency(SubsecondTime::Zero()),
+./CoMeT/common/network/network_model_emesh_hop_by_hop.cc:41:   m_hop_latency(Sim()->getDvfsManager()->getCoreDomain(m_core_id), 0)
+./CoMeT/common/network/network_model_emesh_hop_by_hop.cc:49:      m_hop_latency = ComponentLatency(Sim()->getDvfsManager()->getCoreDomain(m_core_id), Sim()->getCfg()->getInt("network/emesh_hop_by_hop/hop_latency"));
+./CoMeT/common/network/network_model_emesh_hop_by_hop.cc:73:   registerStatsMetric(name, m_core_id, "total-delay", &m_total_packet_latency);
+./CoMeT/common/network/network_model_emesh_hop_by_hop.cc:245:   SubsecondTime packet_latency = pkt.time - pkt.start_time;
+./CoMeT/common/network/network_model_emesh_hop_by_hop.cc:246:   SubsecondTime contention_delay = packet_latency - (computeDistance(pkt.sender, m_core_id) * m_hop_latency.getLatency());
+./CoMeT/common/network/network_model_emesh_hop_by_hop.cc:253:      packet_latency += (ejection_port_queue_delay + processing_time);
+./CoMeT/common/network/network_model_emesh_hop_by_hop.cc:261:   m_total_packet_latency += packet_latency;
+./CoMeT/common/network/network_model_emesh_hop_by_hop.cc:335:   LOG_PRINT("Queue Delay(%s), Hop Latency(%s)", itostr(queue_delay).c_str(), itostr(m_hop_latency.getLatency()).c_str());
+./CoMeT/common/network/network_model_emesh_hop_by_hop.cc:336:   SubsecondTime packet_latency = m_hop_latency.getLatency() + queue_delay;
+./CoMeT/common/network/network_model_emesh_hop_by_hop.cc:338:   return packet_latency;
+./CoMeT/common/network/network_model_emesh_hop_by_hop.h:48:      SubsecondTime m_total_packet_latency;
+./CoMeT/common/network/network_model_emesh_hop_by_hop.h:72:      ComponentLatency m_hop_latency;
+./CoMeT/common/network/network_model_magic.h:19:      ComponentLatency _latency;
+./CoMeT/common/network/network_model_bus.cc:22:   // Emulate the original code, with 10 cycles of latency for the history_list, and 0 outstanding transactions for the contention model
+./CoMeT/common/network/network_model_emesh_hop_counter.cc:19:   , _total_latency(SubsecondTime::Zero())
+./CoMeT/common/network/network_model_emesh_hop_counter.cc:29:      _hopLatency = ComponentLatency(Sim()->getDvfsManager()->getCoreDomain(net->getCore()->getId()), Sim()->getCfg()->getInt("network/emesh_hop_counter/hop_latency"));
+./CoMeT/common/network/network_model_emesh_hop_counter.cc:62:   SubsecondTime serialization_latency = computeSerializationLatency(pkt_length);
+./CoMeT/common/network/network_model_emesh_hop_counter.cc:79:         SubsecondTime latency = computeDistance(sx, sy, dx, dy) * _hopLatency.getLatency();
+./CoMeT/common/network/network_model_emesh_hop_counter.cc:81:            latency += serialization_latency;
+./CoMeT/common/network/network_model_emesh_hop_counter.cc:86:         h.time = curr_time + latency;
+./CoMeT/common/network/network_model_emesh_hop_counter.cc:89:         curr_time += serialization_latency;
+./CoMeT/common/network/network_model_emesh_hop_counter.cc:98:      SubsecondTime latency = computeDistance(sx, sy, dx, dy) * _hopLatency.getLatency();
+./CoMeT/common/network/network_model_emesh_hop_counter.cc:100:         latency += serialization_latency;
+./CoMeT/common/network/network_model_emesh_hop_counter.cc:105:      h.time = pkt.time + latency;
+./CoMeT/common/network/network_model_emesh_hop_counter.cc:133:   SubsecondTime latency = pkt.time - pkt.start_time;
+./CoMeT/common/network/network_model_emesh_hop_counter.cc:137:   _total_latency += latency;
+./CoMeT/common/core/memory_subsystem/fast_nehalem/fast_cache.h:11:         const ComponentLatency m_latency;
+./CoMeT/common/core/memory_subsystem/fast_nehalem/fast_cache.h:13:         SubsecondTime m_total_latency;
+./CoMeT/common/core/memory_subsystem/fast_nehalem/fast_cache.h:15:         Dram(Core *core, String name, UInt64 latency)
+./CoMeT/common/core/memory_subsystem/fast_nehalem/fast_cache.h:16:            : m_latency(core->getDvfsDomain(), latency)
+./CoMeT/common/core/memory_subsystem/fast_nehalem/fast_cache.h:21:            m_total_latency = SubsecondTime::Zero();
+./CoMeT/common/core/memory_subsystem/fast_nehalem/fast_cache.h:22:            registerStatsMetric(name, core->getId(), "total-access-latency", &m_total_latency);
+./CoMeT/common/core/memory_subsystem/fast_nehalem/fast_cache.h:30:            m_total_latency += m_latency.getLatency();
+./CoMeT/common/core/memory_subsystem/fast_nehalem/fast_cache.h:31:            return m_latency.getLatency();
+./CoMeT/common/core/memory_subsystem/fast_nehalem/fast_cache.h:74:         const ComponentLatency m_latency;
+./CoMeT/common/core/memory_subsystem/fast_nehalem/fast_cache.h:82:         Cache(Core *core, String name, MemComponent::component_t mem_component, UInt64 latency, CacheBase* next_level)
+./CoMeT/common/core/memory_subsystem/fast_nehalem/fast_cache.h:84:            , m_latency(core->getDvfsDomain(), latency)
+./CoMeT/common/core/memory_subsystem/fast_nehalem/fast_cache.h:103:               return m_latency.getLatency();
+./CoMeT/common/core/memory_subsystem/fast_nehalem/fast_cache.h:118:         CacheLocked(Core *core, String name, MemComponent::component_t mem_component, UInt64 latency, CacheBase* next_level)
+./CoMeT/common/core/memory_subsystem/fast_nehalem/fast_cache.h:119:            : Cache<assoc, size_kb>(core, name, mem_component, latency, next_level)
+./CoMeT/common/core/memory_subsystem/memory_manager_base.h:71:         SubsecondTime latency = final_time - initial_time;
+./CoMeT/common/core/memory_subsystem/memory_manager_base.h:72:         return latency;
+./CoMeT/common/core/memory_subsystem/dram/dram_cache.cc:103:   SubsecondTime latency = m_tags_access_time;
+./CoMeT/common/core/memory_subsystem/dram/dram_cache.cc:105:   perf->updateTime(now + latency, ShmemPerf::DRAM_CACHE_TAGS);
+./CoMeT/common/core/memory_subsystem/dram/dram_cache.cc:121:         if (t_completed != SubsecondTime::MaxTime() && t_completed > now + latency)
+./CoMeT/common/core/memory_subsystem/dram/dram_cache.cc:123:            m_prefetch_mshr_delay += t_completed - (now + latency);
+./CoMeT/common/core/memory_subsystem/dram/dram_cache.cc:124:            latency = t_completed - now;
+./CoMeT/common/core/memory_subsystem/dram/dram_cache.cc:128:      m_cache->accessSingleLine(address, access, data_buf, m_cache_block_size, now + latency, true);
+./CoMeT/common/core/memory_subsystem/dram/dram_cache.cc:130:      latency += accessDataArray(access, requester, now + latency, perf);
+./CoMeT/common/core/memory_subsystem/dram/dram_cache.cc:139:         SubsecondTime dram_latency;
+./CoMeT/common/core/memory_subsystem/dram/dram_cache.cc:141:         boost::tie(dram_latency, hit_where) = m_dram_cntlr->getDataFromDram(address, requester, data_buf, now + latency, perf);
+./CoMeT/common/core/memory_subsystem/dram/dram_cache.cc:142:         latency += dram_latency;
+./CoMeT/common/core/memory_subsystem/dram/dram_cache.cc:146:      insertLine(access, address, requester, data_buf, now + latency);
+./CoMeT/common/core/memory_subsystem/dram/dram_cache.cc:150:      callPrefetcher(address, cache_hit, prefetch_hit, now + latency);
+./CoMeT/common/core/memory_subsystem/dram/dram_cache.cc:152:   return std::pair<bool, SubsecondTime>(block_info ? true : false, latency);
+./CoMeT/common/core/memory_subsystem/dram/dram_cache.cc:168:   // Write to data array off-line, so don't affect return latency
+./CoMeT/common/core/memory_subsystem/dram/dram_cache.cc:171:   // Writeback to DRAM done off-line, so don't affect return latency
+./CoMeT/common/core/memory_subsystem/dram/dram_cache.cc:217:            SubsecondTime dram_latency;
+./CoMeT/common/core/memory_subsystem/dram/dram_cache.cc:220:            boost::tie(dram_latency, hit_where) = m_dram_cntlr->getDataFromDram(prefetch_address, m_core_id, data_buf, t_issue, NULL);
+./CoMeT/common/core/memory_subsystem/dram/dram_cache.cc:222:            insertLine(Cache::LOAD, prefetch_address, m_core_id, data_buf, t_issue + dram_latency);
+./CoMeT/common/core/memory_subsystem/dram/dram_cache.cc:227:            m_prefetch_mshr.getCompletionTime(t_issue, dram_latency, prefetch_address);
+./CoMeT/common/core/memory_subsystem/dram/dram_cntlr_interface.cc:19:         SubsecondTime dram_latency;
+./CoMeT/common/core/memory_subsystem/dram/dram_cntlr_interface.cc:22:         boost::tie(dram_latency, hit_where) = getDataFromDram(address, shmem_msg->getRequester(), data_buf, msg_time, shmem_msg->getPerf());
+./CoMeT/common/core/memory_subsystem/dram/dram_cntlr_interface.cc:24:         getShmemPerfModel()->incrElapsedTime(dram_latency, ShmemPerfModel::_SIM_THREAD);
+./CoMeT/common/core/memory_subsystem/dram/dram_cntlr_interface.cc:43:         // DRAM latency is ignored on write
+./CoMeT/common/core/memory_subsystem/memory_manager_fast.h:31:         SubsecondTime latency = coreInitiateMemoryAccessFast(mem_component == MemComponent::L1_ICACHE ? true : false, mem_op_type, address);
+./CoMeT/common/core/memory_subsystem/memory_manager_fast.h:32:         getShmemPerfModel()->incrElapsedTime(latency,  ShmemPerfModel::_USER_THREAD);
+./CoMeT/common/core/memory_subsystem/memory_manager_fast.h:33:         if (latency > SubsecondTime::Zero())
+./CoMeT/common/core/memory_subsystem/pr_l1_pr_l2_dram_directory_msi/dram_cntlr.cc:95:   SubsecondTime dram_access_latency = runDramPerfModel(requester, now, address, READ, perf);
+./CoMeT/common/core/memory_subsystem/pr_l1_pr_l2_dram_directory_msi/dram_cntlr.cc:101:   MYLOG("R @ %08lx latency %s", address, itostr(dram_access_latency).c_str());
+./CoMeT/common/core/memory_subsystem/pr_l1_pr_l2_dram_directory_msi/dram_cntlr.cc:105:   return boost::tuple<SubsecondTime, HitWhere::where_t>(dram_access_latency, HitWhere::DRAM);
+./CoMeT/common/core/memory_subsystem/pr_l1_pr_l2_dram_directory_msi/dram_cntlr.cc:124:   SubsecondTime dram_access_latency = runDramPerfModel(requester, now, address, WRITE, &m_dummy_shmem_perf);
+./CoMeT/common/core/memory_subsystem/pr_l1_pr_l2_dram_directory_msi/dram_cntlr.cc:134:   return boost::tuple<SubsecondTime, HitWhere::where_t>(dram_access_latency, HitWhere::DRAM);
+./CoMeT/common/core/memory_subsystem/pr_l1_pr_l2_dram_directory_msi/dram_cntlr.cc:141:   SubsecondTime dram_access_latency = m_dram_perf_model->getAccessLatency(time, pkt_size, requester, address, access_type, perf);
+./CoMeT/common/core/memory_subsystem/pr_l1_pr_l2_dram_directory_msi/dram_cntlr.cc:142:   return dram_access_latency;
+./CoMeT/common/core/memory_subsystem/pr_l1_pr_l2_dram_directory_msi/dram_directory_cntlr.cc:640:         SubsecondTime nuca_latency;
+./CoMeT/common/core/memory_subsystem/pr_l1_pr_l2_dram_directory_msi/dram_directory_cntlr.cc:643:         boost::tie(nuca_latency, hit_where) = m_nuca_cache->read(address, nuca_data_buf, getShmemPerfModel()->getElapsedTime(ShmemPerfModel::_SIM_THREAD), orig_shmem_msg->getPerf(), true);
+./CoMeT/common/core/memory_subsystem/pr_l1_pr_l2_dram_directory_msi/dram_directory_cntlr.cc:645:         getShmemPerfModel()->incrElapsedTime(nuca_latency, ShmemPerfModel::_SIM_THREAD);
+./CoMeT/common/core/memory_subsystem/pr_l1_pr_l2_dram_directory_msi/dram_directory_cntlr.cc:1260:      // DRAM latency is ignored on write
+./CoMeT/common/core/memory_subsystem/pr_l1_pr_l2_dram_directory_msi/dram_cntlr.h:48:         // Run DRAM performance model. Pass in begin time, returns latency
+./CoMeT/common/core/memory_subsystem/parametric_dram_directory_msi/nuca_cache.cc:63:   SubsecondTime latency = m_tags_access_time.getLatency();
+./CoMeT/common/core/memory_subsystem/parametric_dram_directory_msi/nuca_cache.cc:64:   perf->updateTime(now + latency, ShmemPerf::NUCA_TAGS);
+./CoMeT/common/core/memory_subsystem/parametric_dram_directory_msi/nuca_cache.cc:68:      m_cache->accessSingleLine(address, Cache::LOAD, data_buf, m_cache_block_size, now + latency, true);
+./CoMeT/common/core/memory_subsystem/parametric_dram_directory_msi/nuca_cache.cc:70:      latency += accessDataArray(Cache::LOAD, now + latency, perf);
+./CoMeT/common/core/memory_subsystem/parametric_dram_directory_msi/nuca_cache.cc:79:   return boost::tuple<SubsecondTime, HitWhere::where_t>(latency, hit_where);
+./CoMeT/common/core/memory_subsystem/parametric_dram_directory_msi/nuca_cache.cc:88:   SubsecondTime latency = m_tags_access_time.getLatency();
+./CoMeT/common/core/memory_subsystem/parametric_dram_directory_msi/nuca_cache.cc:93:      m_cache->accessSingleLine(address, Cache::STORE, data_buf, m_cache_block_size, now + latency, true);
+./CoMeT/common/core/memory_subsystem/parametric_dram_directory_msi/nuca_cache.cc:95:      latency += accessDataArray(Cache::STORE, now + latency, &m_dummy_shmem_perf);
+./CoMeT/common/core/memory_subsystem/parametric_dram_directory_msi/nuca_cache.cc:104:         now + latency);
+./CoMeT/common/core/memory_subsystem/parametric_dram_directory_msi/nuca_cache.cc:119:   return boost::tuple<SubsecondTime, HitWhere::where_t>(latency, hit_where);
+./CoMeT/common/core/memory_subsystem/parametric_dram_directory_msi/cache_cntlr.h:29:/* Enable to track latency by HitWhere */
+./CoMeT/common/core/memory_subsystem/parametric_dram_directory_msi/cache_cntlr.h:236:           SubsecondTime total_latency;
+./CoMeT/common/core/memory_subsystem/parametric_dram_directory_msi/cache_cntlr.h:237:           SubsecondTime snoop_latency;
+./CoMeT/common/core/memory_subsystem/parametric_dram_directory_msi/cache_cntlr.h:238:           SubsecondTime qbs_query_latency;
+./CoMeT/common/core/memory_subsystem/parametric_dram_directory_msi/cache_cntlr.h:239:           SubsecondTime mshr_latency;
+./CoMeT/common/core/memory_subsystem/parametric_dram_directory_msi/cache_cntlr.cc:225:   registerStatsMetric(name, core_id, "total-latency", &stats.total_latency);
+./CoMeT/common/core/memory_subsystem/parametric_dram_directory_msi/cache_cntlr.cc:226:   registerStatsMetric(name, core_id, "snoop-latency", &stats.snoop_latency);
+./CoMeT/common/core/memory_subsystem/parametric_dram_directory_msi/cache_cntlr.cc:227:   registerStatsMetric(name, core_id, "qbs-query-latency", &stats.qbs_query_latency);
+./CoMeT/common/core/memory_subsystem/parametric_dram_directory_msi/cache_cntlr.cc:228:   registerStatsMetric(name, core_id, "mshr-latency", &stats.mshr_latency);
+./CoMeT/common/core/memory_subsystem/parametric_dram_directory_msi/cache_cntlr.cc:420:            SubsecondTime latency = t_completed - t_now;
+./CoMeT/common/core/memory_subsystem/parametric_dram_directory_msi/cache_cntlr.cc:421:            getShmemPerfModel()->incrElapsedTime(latency, ShmemPerfModel::_USER_THREAD);
+./CoMeT/common/core/memory_subsystem/parametric_dram_directory_msi/cache_cntlr.cc:433:            SubsecondTime latency = m_master->mshr[ca_address].t_complete - t_now;
+./CoMeT/common/core/memory_subsystem/parametric_dram_directory_msi/cache_cntlr.cc:434:            stats.mshr_latency += latency;
+./CoMeT/common/core/memory_subsystem/parametric_dram_directory_msi/cache_cntlr.cc:435:            getMemoryManager()->incrElapsedTime(latency, ShmemPerfModel::_USER_THREAD);
+./CoMeT/common/core/memory_subsystem/parametric_dram_directory_msi/cache_cntlr.cc:452:         SubsecondTime mshr_latency = t_mshr_avail - t_miss_begin;
+./CoMeT/common/core/memory_subsystem/parametric_dram_directory_msi/cache_cntlr.cc:454:         getShmemPerfModel()->incrElapsedTime(mshr_latency, ShmemPerfModel::_USER_THREAD);
+./CoMeT/common/core/memory_subsystem/parametric_dram_directory_msi/cache_cntlr.cc:455:         stats.mshr_latency += mshr_latency;
+./CoMeT/common/core/memory_subsystem/parametric_dram_directory_msi/cache_cntlr.cc:553:   SubsecondTime total_latency = t_now - t_start;
+./CoMeT/common/core/memory_subsystem/parametric_dram_directory_msi/cache_cntlr.cc:560:         stats.total_latency += total_latency;
+./CoMeT/common/core/memory_subsystem/parametric_dram_directory_msi/cache_cntlr.cc:565:         lat_by_where[hit_where].update(total_latency.getNS());
+./CoMeT/common/core/memory_subsystem/parametric_dram_directory_msi/cache_cntlr.cc:602:   MYLOG("returning %s, latency %lu ns", HitWhereString(hit_where), total_latency.getNS());
+./CoMeT/common/core/memory_subsystem/parametric_dram_directory_msi/cache_cntlr.cc:640:      // Assume cache access time already contains transfer latency, increment time by contention delay only
+./CoMeT/common/core/memory_subsystem/parametric_dram_directory_msi/cache_cntlr.cc:829:            SubsecondTime latency = m_master->mshr[address].t_complete - t_now;
+./CoMeT/common/core/memory_subsystem/parametric_dram_directory_msi/cache_cntlr.cc:830:            stats.mshr_latency += latency;
+./CoMeT/common/core/memory_subsystem/parametric_dram_directory_msi/cache_cntlr.cc:831:            getMemoryManager()->incrElapsedTime(latency, ShmemPerfModel::_USER_THREAD);
+./CoMeT/common/core/memory_subsystem/parametric_dram_directory_msi/cache_cntlr.cc:842:         SubsecondTime latency = SubsecondTime::Zero();
+./CoMeT/common/core/memory_subsystem/parametric_dram_directory_msi/cache_cntlr.cc:848:               latency = getMax<SubsecondTime>(latency, res.first);
+./CoMeT/common/core/memory_subsystem/parametric_dram_directory_msi/cache_cntlr.cc:852:         MYLOG("add latency %s, sibling_hit(%u)", itostr(latency).c_str(), sibling_hit);
+./CoMeT/common/core/memory_subsystem/parametric_dram_directory_msi/cache_cntlr.cc:853:         getMemoryManager()->incrElapsedTime(latency, ShmemPerfModel::_USER_THREAD);
+./CoMeT/common/core/memory_subsystem/parametric_dram_directory_msi/cache_cntlr.cc:854:         atomic_add_subsecondtime(stats.snoop_latency, latency);
+./CoMeT/common/core/memory_subsystem/parametric_dram_directory_msi/cache_cntlr.cc:863:         SubsecondTime latency = SubsecondTime::Zero();
+./CoMeT/common/core/memory_subsystem/parametric_dram_directory_msi/cache_cntlr.cc:867:               latency = getMax<SubsecondTime>(latency, res.first);
+./CoMeT/common/core/memory_subsystem/parametric_dram_directory_msi/cache_cntlr.cc:871:         MYLOG("add latency %s, sibling_hit(%u)", itostr(latency).c_str(), sibling_hit);
+./CoMeT/common/core/memory_subsystem/parametric_dram_directory_msi/cache_cntlr.cc:872:         getMemoryManager()->incrElapsedTime(latency, ShmemPerfModel::_USER_THREAD);
+./CoMeT/common/core/memory_subsystem/parametric_dram_directory_msi/cache_cntlr.cc:873:         atomic_add_subsecondtime(stats.snoop_latency, latency);
+./CoMeT/common/core/memory_subsystem/parametric_dram_directory_msi/cache_cntlr.cc:879:         SubsecondTime latency = SubsecondTime::Zero();
+./CoMeT/common/core/memory_subsystem/parametric_dram_directory_msi/cache_cntlr.cc:883:               latency = getMax<SubsecondTime>(latency, res.first);
+./CoMeT/common/core/memory_subsystem/parametric_dram_directory_msi/cache_cntlr.cc:888:         MYLOG("add latency %s, sibling_hit(%u)", itostr(latency).c_str(), sibling_hit);
+./CoMeT/common/core/memory_subsystem/parametric_dram_directory_msi/cache_cntlr.cc:889:         getMemoryManager()->incrElapsedTime(latency, ShmemPerfModel::_USER_THREAD);
+./CoMeT/common/core/memory_subsystem/parametric_dram_directory_msi/cache_cntlr.cc:890:         atomic_add_subsecondtime(stats.snoop_latency, latency);
+./CoMeT/common/core/memory_subsystem/parametric_dram_directory_msi/cache_cntlr.cc:912:         SubsecondTime latency = SubsecondTime::Zero();
+./CoMeT/common/core/memory_subsystem/parametric_dram_directory_msi/cache_cntlr.cc:915:               latency = getMax<SubsecondTime>(latency, (*it)->updateCacheBlock(address, CacheState::INVALID, Transition::UPGRADE, NULL, ShmemPerfModel::_USER_THREAD).first);
+./CoMeT/common/core/memory_subsystem/parametric_dram_directory_msi/cache_cntlr.cc:916:         getMemoryManager()->incrElapsedTime(latency, ShmemPerfModel::_USER_THREAD);
+./CoMeT/common/core/memory_subsystem/parametric_dram_directory_msi/cache_cntlr.cc:917:         atomic_add_subsecondtime(stats.snoop_latency, latency);
+./CoMeT/common/core/memory_subsystem/parametric_dram_directory_msi/cache_cntlr.cc:945:            SubsecondTime latency = SubsecondTime::Zero();
+./CoMeT/common/core/memory_subsystem/parametric_dram_directory_msi/cache_cntlr.cc:948:                  latency = getMax<SubsecondTime>(latency, (*it)->updateCacheBlock(address, CacheState::INVALID, Transition::UPGRADE, NULL, ShmemPerfModel::_USER_THREAD).first);
+./CoMeT/common/core/memory_subsystem/parametric_dram_directory_msi/cache_cntlr.cc:949:            getMemoryManager()->incrElapsedTime(latency, ShmemPerfModel::_USER_THREAD);
+./CoMeT/common/core/memory_subsystem/parametric_dram_directory_msi/cache_cntlr.cc:950:            atomic_add_subsecondtime(stats.snoop_latency, latency);
+./CoMeT/common/core/memory_subsystem/parametric_dram_directory_msi/cache_cntlr.cc:976:               SubsecondTime latency;
+./CoMeT/common/core/memory_subsystem/parametric_dram_directory_msi/cache_cntlr.cc:979:               boost::tie<HitWhere::where_t, SubsecondTime>(hit_where, latency) = accessDRAM(Core::READ, address, isPrefetch != Prefetch::NONE, data_buf);
+./CoMeT/common/core/memory_subsystem/parametric_dram_directory_msi/cache_cntlr.cc:980:               getMemoryManager()->incrElapsedTime(latency, ShmemPerfModel::_USER_THREAD);
+./CoMeT/common/core/memory_subsystem/parametric_dram_directory_msi/cache_cntlr.cc:1097:   SubsecondTime dram_latency;
+./CoMeT/common/core/memory_subsystem/parametric_dram_directory_msi/cache_cntlr.cc:1103:         boost::tie(dram_latency, hit_where) = m_master->m_dram_cntlr->getDataFromDram(address, m_core_id_master, data_buf, t_issue, m_shmem_perf);
+./CoMeT/common/core/memory_subsystem/parametric_dram_directory_msi/cache_cntlr.cc:1108:         boost::tie(dram_latency, hit_where) = m_master->m_dram_cntlr->putDataToDram(address, m_core_id_master, data_buf, t_issue);
+./CoMeT/common/core/memory_subsystem/parametric_dram_directory_msi/cache_cntlr.cc:1115:   return boost::tuple<HitWhere::where_t, SubsecondTime>(hit_where, dram_latency);
+./CoMeT/common/core/memory_subsystem/parametric_dram_directory_msi/cache_cntlr.cc:1431:         SubsecondTime latency = SubsecondTime::Zero();
+./CoMeT/common/core/memory_subsystem/parametric_dram_directory_msi/cache_cntlr.cc:1433:            latency = getMax<SubsecondTime>(latency, (*it)->updateCacheBlock(evict_address, CacheState::INVALID, Transition::BACK_INVAL, NULL, thread_num).first);
+./CoMeT/common/core/memory_subsystem/parametric_dram_directory_msi/cache_cntlr.cc:1434:         getMemoryManager()->incrElapsedTime(latency, thread_num);
+./CoMeT/common/core/memory_subsystem/parametric_dram_directory_msi/cache_cntlr.cc:1435:         atomic_add_subsecondtime(stats.snoop_latency, latency);
+./CoMeT/common/core/memory_subsystem/parametric_dram_directory_msi/cache_cntlr.cc:1480:            SubsecondTime dram_latency;
+./CoMeT/common/core/memory_subsystem/parametric_dram_directory_msi/cache_cntlr.cc:1482:            boost::tie<HitWhere::where_t, SubsecondTime>(hit_where, dram_latency) = accessDRAM(Core::WRITE, evict_address, false, evict_buf);
+./CoMeT/common/core/memory_subsystem/parametric_dram_directory_msi/cache_cntlr.cc:1488:               m_master->m_dram_outstanding_writebacks->getCompletionTime(t_now, dram_latency);
+./CoMeT/common/core/memory_subsystem/parametric_dram_directory_msi/cache_cntlr.cc:1542:   SubsecondTime latency = SubsecondTime::Zero();
+./CoMeT/common/core/memory_subsystem/parametric_dram_directory_msi/cache_cntlr.cc:1551:         //latency = getMax<SubsecondTime>(latency, res.first);
+./CoMeT/common/core/memory_subsystem/parametric_dram_directory_msi/cache_cntlr.cc:1691:      so only when we accessed data should we return any latency */
+./CoMeT/common/core/memory_subsystem/parametric_dram_directory_msi/cache_cntlr.cc:1693:      latency += m_writeback_time.getLatency();
+./CoMeT/common/core/memory_subsystem/parametric_dram_directory_msi/cache_cntlr.cc:1694:   return std::pair<SubsecondTime, bool>(latency, sibling_hit);
+./CoMeT/common/core/memory_subsystem/parametric_dram_directory_msi/cache_cntlr.cc:1741:   SubsecondTime latency = m_writeback_time.getLatency();
+./CoMeT/common/core/memory_subsystem/parametric_dram_directory_msi/cache_cntlr.cc:1742:   getMemoryManager()->incrElapsedTime(latency, ShmemPerfModel::_USER_THREAD);
+./CoMeT/common/core/memory_subsystem/parametric_dram_directory_msi/cache_cntlr.cc:1743:   atomic_add_subsecondtime(stats.qbs_query_latency, latency);
+./CoMeT/common/core/memory_subsystem/parametric_dram_directory_msi/memory_manager.h:114:         void incrElapsedTime(SubsecondTime latency, ShmemPerfModel::Thread_t thread_num = ShmemPerfModel::NUM_CORE_THREADS);
+./CoMeT/common/core/memory_subsystem/parametric_dram_directory_msi/memory_manager.cc:620:MemoryManager::incrElapsedTime(SubsecondTime latency, ShmemPerfModel::Thread_t thread_num)
+./CoMeT/common/core/memory_subsystem/parametric_dram_directory_msi/memory_manager.cc:622:   MYLOG("cycles += %s", itostr(latency).c_str());
+./CoMeT/common/core/memory_subsystem/parametric_dram_directory_msi/memory_manager.cc:623:   getShmemPerfModel()->incrElapsedTime(latency, thread_num);
+./CoMeT/common/core/memory_subsystem/directory_schemes/directory_entry_limitless.h:72:   // I have to calculate the latency properly here
+./CoMeT/common/core/core.h:26:   subsecond_time_t latency;
+./CoMeT/common/core/core.h:29:MemoryResult makeMemoryResult(HitWhere::where_t _hit_where, SubsecondTime _latency);
+./CoMeT/common/core/core.h:76:         MEM_MODELED_TIME,      /* Count + account for access latency (using MemAccessInstruction) */
+./CoMeT/common/core/core.h:77:         MEM_MODELED_FENCED,    /* Count + account for access latency as memory fence (using MemAccessInstruction) */
+./CoMeT/common/core/core.cc:212:makeMemoryResult(HitWhere::where_t _hit_where, SubsecondTime _latency)
+./CoMeT/common/core/core.cc:217:   res.latency = _latency;
+./CoMeT/common/core/core.cc:268:   SubsecondTime latency = getMemoryManager()->coreInitiateMemoryAccessFast(icache, mem_op_type, address);
+./CoMeT/common/core/core.cc:270:   if (latency > SubsecondTime::Zero())
+./CoMeT/common/core/core.cc:271:      m_performance_model->handleMemoryLatency(latency, HitWhere::MISS);
+./CoMeT/common/core/core.cc:423:            /* queue a fake instruction that will account for the access latency */
+./CoMeT/common/misc/subsecond_time.h:482:   ComponentLatency(const ComponentPeriod *period, uint64_t fixed_cycle_latency)
+./CoMeT/common/misc/subsecond_time.h:484:      , m_fixed_cycle_latency(fixed_cycle_latency)
+./CoMeT/common/misc/subsecond_time.h:489:      return static_cast<SubsecondTime>(*m_period) * m_fixed_cycle_latency;
+./CoMeT/common/misc/subsecond_time.h:499:      m_fixed_cycle_latency += rhs;
+./CoMeT/common/misc/subsecond_time.h:506:   uint64_t m_fixed_cycle_latency;
+./CoMeT/common/misc/subsecond_time.h:513:inline std::ostream &operator<<(std::ostream &os, const ComponentLatency &latency)
+./CoMeT/common/misc/subsecond_time.h:516:   return (os << latency.m_fixed_cycle_latency);
+./CoMeT/common/misc/subsecond_time.h:518:   return (os << "CL:" << latency.m_fixed_cycle_latency << "@" << latency.m_period);
+./CoMeT/common/misc/subsecond_time.h:523://  numbers of cycles in latency need to be added to the core time
+./CoMeT/config/cacheonly.cfg:11:include_memory_latency = true
+./CoMeT/config/gainestown_3D_8core_2L.cfg:37:# DRAM access latency in nanoseconds. Should not include L1-LLC tag access time, directory access time (14 cycles = 5.2 ns),
+./CoMeT/config/gainestown_3D_8core_2L.cfg:40:latency = 15
+./CoMeT/config/gainestown_3Dmem_16core.cfg:37:# DRAM access latency in nanoseconds. Should not include L1-LLC tag access time, directory access time (14 cycles = 5.2 ns),
+./CoMeT/config/gainestown_3Dmem_16core.cfg:40:latency = 29
+./CoMeT/config/gainestown_3D.cfg:37:# DRAM access latency in nanoseconds. Should not include L1-LLC tag access time, directory access time (14 cycles = 5.2 ns),
+./CoMeT/config/gainestown_3D.cfg:40:latency = 15
+./CoMeT/config/silvermont.cfg:93:# DRAM access latency in nanoseconds. Should not include L1-LLC tag access time, directory access time (14 cycles = 5.2 ns),
+./CoMeT/config/silvermont.cfg:96:latency = 45
+./CoMeT/config/silvermont.cfg:117:transition_latency = 2000 # In ns, "under 2 microseconds" according to http://download.intel.com/design/intarch/papers/323671.pdf (page 8)
+./CoMeT/config/nehalem.cfg:97:transition_latency = 2000 # In ns, "under 2 microseconds" according to http://download.intel.com/design/intarch/papers/323671.pdf (page 8)
+./CoMeT/config/gainestown_3Dmem_16channels_48cores.cfg:37:# DRAM access latency in nanoseconds. Should not include L1-LLC tag access time, directory access time (14 cycles = 5.2 ns),
+./CoMeT/config/gainestown_3Dmem_16channels_48cores.cfg:40:latency = 29
+./CoMeT/config/dunnington.cfg:93:# DRAM access latency in nanoseconds. Should not include L1-LLC tag access time, directory access time (24 cycles = 9 ns),
+./CoMeT/config/dunnington.cfg:95:latency = 173
+./CoMeT/config/dunnington.cfg:120:transition_latency = 10000 # In ns, /sys/devices/system/cpu/cpu0/cpufreq/cpuinfo_transition_latency
+./CoMeT/config/kingscross.cfg:77:latency = 80
+./CoMeT/config/kingscross.cfg:88:hop_latency = 4            # Per-hop latency in core cycles
+./CoMeT/config/kingscross.cfg:104:transition_latency = 2000 # In ns, "under 2 microseconds" according to http://download.intel.com/design/intarch/papers/323671.pdf (page 8)
+./CoMeT/config/gainestown.cfg:34:# DRAM access latency in nanoseconds. Should not include L1-LLC tag access time, directory access time (14 cycles = 5.2 ns),
+./CoMeT/config/gainestown.cfg:37:latency = 45
+./CoMeT/config/gainestown_16channel_48cores.cfg:34:# DRAM access latency in nanoseconds. Should not include L1-LLC tag access time, directory access time (14 cycles = 5.2 ns),
+./CoMeT/config/gainestown_16channel_48cores.cfg:37:latency = 29
+./CoMeT/config/gainestown_3Dmem_1core_1ch.cfg:37:# DRAM access latency in nanoseconds. Should not include L1-LLC tag access time, directory access time (14 cycles = 5.2 ns),
+./CoMeT/config/gainestown_3Dmem_1core_1ch.cfg:40:latency = 29
+./CoMeT/config/gainestown_4channel_4cores.cfg:34:# DRAM access latency in nanoseconds. Should not include L1-LLC tag access time, directory access time (14 cycles = 5.2 ns),
+./CoMeT/config/gainestown_4channel_4cores.cfg:37:latency = 29
+./CoMeT/config/gainestown_3Dmem.cfg:37:# DRAM access latency in nanoseconds. Should not include L1-LLC tag access time, directory access time (14 cycles = 5.2 ns),
+./CoMeT/config/gainestown_3Dmem.cfg:40:latency = 29
+./CoMeT/config/noc.cfg:5:hop_latency = 2            # Per-hop latency in core cycles
+./CoMeT/config/oneipc.cfg:5:latency_cutoff = 4 # Maximum latency which is assumed to be completely overlapped. L1-D hit latency should be a good value
+./CoMeT/config/gainestown_DDR.cfg:37:# DRAM access latency in nanoseconds. Should not include L1-LLC tag access time, directory access time (14 cycles = 5.2 ns),
+./CoMeT/config/gainestown_DDR.cfg:40:latency = 45
+./CoMeT/config/gainestown_nvm.cfg:35:# DRAM access latency in nanoseconds. Should not include L1-LLC tag access time, directory access time (14 cycles = 5.2 ns),
+./CoMeT/config/gainestown_nvm.cfg:38:read_latency = 426
+./CoMeT/config/gainestown_nvm.cfg:39:write_latency = 518
+./CoMeT/config/gainestown_3Dmem_subcore.cfg:37:# DRAM access latency in nanoseconds. Should not include L1-LLC tag access time, directory access time (14 cycles = 5.2 ns),
+./CoMeT/config/gainestown_3Dmem_subcore.cfg:40:latency = 29
+./CoMeT/config/gainestown_16channel_16cores.cfg:34:# DRAM access latency in nanoseconds. Should not include L1-LLC tag access time, directory access time (14 cycles = 5.2 ns),
+./CoMeT/config/gainestown_16channel_16cores.cfg:37:latency = 29
+./CoMeT/config/riscv.cfg:122:data_access_time = 8 # Maximum from the overall RAM latency calculation table, tech ref manual
+./CoMeT/config/riscv.cfg:123:tags_access_time = 5 # Maximum from the overall RAM latency calculation table, tech ref manual
+./CoMeT/config/riscv.cfg:150:latency = 100 # In nanoseconds
+./CoMeT/config/riscv.cfg:166:transition_latency = 0 # In nanoseconds
+./CoMeT/config/gainestown_3D_16core.cfg:37:# DRAM access latency in nanoseconds. Should not include L1-LLC tag access time, directory access time (14 cycles = 5.2 ns),
+./CoMeT/config/gainestown_3D_16core.cfg:40:latency = 15
+./CoMeT/config/riscv-mediumboom.cfg:122:data_access_time = 8 # Maximum from the overall RAM latency calculation table, tech ref manual
+./CoMeT/config/riscv-mediumboom.cfg:123:tags_access_time = 5 # Maximum from the overall RAM latency calculation table, tech ref manual
+./CoMeT/config/riscv-mediumboom.cfg:150:latency = 100 # In nanoseconds
+./CoMeT/config/riscv-mediumboom.cfg:166:transition_latency = 0 # In nanoseconds
+./CoMeT/config/gainestown_2_5D_16core.cfg:37:# DRAM access latency in nanoseconds. Should not include L1-LLC tag access time, directory access time (14 cycles = 5.2 ns),
+./CoMeT/config/gainestown_2_5D_16core.cfg:40:latency = 20
+./CoMeT/config/beckton.cfg:36:# DRAM access latency in nanoseconds. Should not include L1-LLC tag access time, directory access time (24 cycles = 9 ns),
+./CoMeT/config/beckton.cfg:38:latency = 173
+./CoMeT/config/gainestown_DDR_16core.cfg:37:# DRAM access latency in nanoseconds. Should not include L1-LLC tag access time, directory access time (14 cycles = 5.2 ns),
+./CoMeT/config/gainestown_DDR_16core.cfg:40:latency = 45
+./CoMeT/config/gainestown_3Dmem_8core_2L.cfg:37:# DRAM access latency in nanoseconds. Should not include L1-LLC tag access time, directory access time (14 cycles = 5.2 ns),
+./CoMeT/config/gainestown_3Dmem_8core_2L.cfg:40:latency = 29
+./CoMeT/config/gainestown_2_5D.cfg:37:# DRAM access latency in nanoseconds. Should not include L1-LLC tag access time, directory access time (14 cycles = 5.2 ns),
+./CoMeT/config/gainestown_2_5D.cfg:40:latency = 20
+./CoMeT/config/base.cfg:73:lll_dependency_granularity = 64 # In bytes. Model the MSHR for overlapping misses by adding additional dependencies on long-latency loads using cache-line granularity
+./CoMeT/config/base.cfg:194:include_memory_latency = true # Increment time by memory latency
+./CoMeT/config/base.cfg:232:latency = 15                             # In nanoseconds
+./CoMeT/config/base.cfg:233:latency_lowpower = 600                   # In nanoseconds. Needs to be defined, but will only be used for dram DTM.
+./CoMeT/config/base.cfg:272:hop_latency = 2
+./CoMeT/config/base.cfg:276:hop_latency = 2       # In cycles
+./CoMeT/config/base.cfg:309:transition_latency = 0 # In nanoseconds
+./CoMeT/config/gainestown_16channel_32cores.cfg:34:# DRAM access latency in nanoseconds. Should not include L1-LLC tag access time, directory access time (14 cycles = 5.2 ns),
+./CoMeT/config/gainestown_16channel_32cores.cfg:37:latency = 29
+./CoMeT/config/gainestown_3Dmem_16channels_32cores.cfg:37:# DRAM access latency in nanoseconds. Should not include L1-LLC tag access time, directory access time (14 cycles = 5.2 ns),
+./CoMeT/config/gainestown_3Dmem_16channels_32cores.cfg:40:latency = 29
+./CoMeT/mcpat/patches/sniper-mcpat-1.0.patch:83: 			if ((((local_result.cycle_time - throughput) <= 1e-10 ) && (local_result.access_time - latency)<= 1e-10)||
+./CoMeT/mcpat/patches/sniper-mcpat-1.0.patch:839:+  double sram_sleep_wakeup_latency, wl_sleep_wakeup_latency, cl_sleep_wakeup_latency, bl_floating_wakeup_latency;
+./CoMeT/mcpat/patches/sniper-mcpat-1.0.patch:956:-  double sram_sleep_wakeup_latency, wl_sleep_wakeup_latency, cl_sleep_wakeup_latency, bl_floating_wakeup_latency;
+./CoMeT/mcpat/patches/sniper-mcpat-1.0.patch:1146:-	  wakeup_T = wakeup_T_data=MAX(fr->data_array2->sram_sleep_wakeup_latency,
+./CoMeT/mcpat/patches/sniper-mcpat-1.0.patch:1147:-			  MAX(fr->data_array2->wl_sleep_wakeup_latency,fr->data_array2->bl_floating_wakeup_latency));
+./CoMeT/mcpat/patches/sniper-mcpat-1.0.patch:1151:+	  wakeup_T = wakeup_T_data=MAX(fr->data_array2.sram_sleep_wakeup_latency,
+./CoMeT/mcpat/patches/sniper-mcpat-1.0.patch:1152:+			  MAX(fr->data_array2.wl_sleep_wakeup_latency,fr->data_array2.bl_floating_wakeup_latency));
+./CoMeT/mcpat/patches/sniper-mcpat-1.0.patch:1158:-		  wakeup_T_tag=MAX(fr->tag_array2->sram_sleep_wakeup_latency,
+./CoMeT/mcpat/patches/sniper-mcpat-1.0.patch:1159:-				  MAX(fr->tag_array2->wl_sleep_wakeup_latency,fr->tag_array2->bl_floating_wakeup_latency));
+./CoMeT/mcpat/patches/sniper-mcpat-1.0.patch:1163:+		  wakeup_T_tag=MAX(fr->tag_array2.sram_sleep_wakeup_latency,
+./CoMeT/mcpat/patches/sniper-mcpat-1.0.patch:1164:+				  MAX(fr->tag_array2.wl_sleep_wakeup_latency,fr->tag_array2.bl_floating_wakeup_latency));
+./CoMeT/mcpat/patches/sniper-mcpat-1.0.patch:1237:-		  wakeup_T = wakeup_T_data=MAX(fr->data_array2->sram_sleep_wakeup_latency,
+./CoMeT/mcpat/patches/sniper-mcpat-1.0.patch:1238:-				  MAX(fr->data_array2->wl_sleep_wakeup_latency,fr->data_array2->bl_floating_wakeup_latency));
+./CoMeT/mcpat/patches/sniper-mcpat-1.0.patch:1242:+		  wakeup_T = wakeup_T_data=MAX(fr->data_array2.sram_sleep_wakeup_latency,
+./CoMeT/mcpat/patches/sniper-mcpat-1.0.patch:1243:+				  MAX(fr->data_array2.wl_sleep_wakeup_latency,fr->data_array2.bl_floating_wakeup_latency));
+./CoMeT/mcpat/patches/sniper-mcpat-1.0.patch:1249:-			  wakeup_T_tag=MAX(fr->tag_array2->sram_sleep_wakeup_latency,
+./CoMeT/mcpat/patches/sniper-mcpat-1.0.patch:1250:-					  MAX(fr->tag_array2->wl_sleep_wakeup_latency,fr->tag_array2->bl_floating_wakeup_latency));
+./CoMeT/mcpat/patches/sniper-mcpat-1.0.patch:1254:+			  wakeup_T_tag=MAX(fr->tag_array2.sram_sleep_wakeup_latency,
+./CoMeT/mcpat/patches/sniper-mcpat-1.0.patch:1255:+					  MAX(fr->tag_array2.wl_sleep_wakeup_latency,fr->tag_array2.bl_floating_wakeup_latency));
+./CoMeT/mcpat/patches/sniper-mcpat-1.0.patch:1275:-		  fr->data_array2->sram_sleep_wakeup_latency*1e9 << endl;
+./CoMeT/mcpat/patches/sniper-mcpat-1.0.patch:1276:+		  fr->data_array2.sram_sleep_wakeup_latency*1e9 << endl;
+./CoMeT/mcpat/patches/sniper-mcpat-1.0.patch:1296:-		  fr->data_array2->wl_sleep_wakeup_latency*1e9 << endl;
+./CoMeT/mcpat/patches/sniper-mcpat-1.0.patch:1297:+		  fr->data_array2.wl_sleep_wakeup_latency*1e9 << endl;
+./CoMeT/mcpat/patches/sniper-mcpat-1.0.patch:1305:-		  fr->data_array2->bl_floating_wakeup_latency*1e9 << endl;
+./CoMeT/mcpat/patches/sniper-mcpat-1.0.patch:1306:+		  fr->data_array2.bl_floating_wakeup_latency*1e9 << endl;
+./CoMeT/mcpat/patches/sniper-mcpat-1.0.patch:1337:-			  fr->tag_array2->sram_sleep_wakeup_latency*1e9 << endl;
+./CoMeT/mcpat/patches/sniper-mcpat-1.0.patch:1338:+			  fr->tag_array2.sram_sleep_wakeup_latency*1e9 << endl;
+./CoMeT/mcpat/patches/sniper-mcpat-1.0.patch:1358:-			  fr->tag_array2->wl_sleep_wakeup_latency*1e9 << endl;
+./CoMeT/mcpat/patches/sniper-mcpat-1.0.patch:1359:+			  fr->tag_array2.wl_sleep_wakeup_latency*1e9 << endl;
+./CoMeT/mcpat/patches/sniper-mcpat-1.0.patch:1367:-			  fr->tag_array2->bl_floating_wakeup_latency*1e9 << endl;
+./CoMeT/mcpat/patches/sniper-mcpat-1.0.patch:1368:+			  fr->tag_array2.bl_floating_wakeup_latency*1e9 << endl;
+./CoMeT/pin/lite/memory_modeling.cc:219:      localStore[thread_id].dynins->addMemory(executing, res.latency, read_address, read_data_size, Operand::READ, 0, res.hit_where);
+./CoMeT/pin/lite/memory_modeling.cc:262:         localStore[thread_id].dynins->addMemory(executing, memres.latency, read_address, read_data_size, Operand::READ, 0, memres.hit_where);
+./CoMeT/pin/lite/memory_modeling.cc:351:      localStore[thread_id].dynins->addMemory(executing, res.latency, write_address, write_data_size, Operand::WRITE, 0, res.hit_where);
+./CoMeT/pin/lite/memory_modeling.cc:398:         localStore[thread_id].dynins->addMemory(executing, res.latency, write_address, write_data_size, Operand::WRITE, 0, res.hit_where);
+./CoMeT/pin_kit/extras/pinplay/include-ext/zlib.h:254:  some output latency (reading input without producing any output) except when
+./CoMeT/pin_kit/extras/pinplay/include-ext/zlib.h:404:  some output latency (reading input without producing any output) except when
+./CoMeT/pin_kit/extras/crt/include/kernel/uapi/linux/pkt_sched.h:499: __u32 latency;
+./CoMeT/test/true/sim.out:52:  average dram access latency (ns)   |      79.77
+./CoMeT/test/true/sim.cfg:33:transition_latency = 2000
+./CoMeT/test/true/sim.cfg:100:hop_latency = 2
+./CoMeT/test/true/sim.cfg:113:hop_latency = 2
+./CoMeT/test/true/sim.cfg:176:latency = 45
+./CoMeT/test/true/sim.cfg:213:include_memory_latency = "true"
+./CoMeT/test/fork/sim.out:52:  average dram access latency (ns)   |      96.33 |        inf
+./CoMeT/test/fork/sim.cfg:33:transition_latency = 2000
+./CoMeT/test/fork/sim.cfg:100:hop_latency = 2
+./CoMeT/test/fork/sim.cfg:113:hop_latency = 2
+./CoMeT/test/fork/sim.cfg:176:latency = 45
+./CoMeT/test/fork/sim.cfg:213:include_memory_latency = "true"
+./CoMeT/test/api/sim.out:52:  average dram access latency (ns)   |     109.03 |        inf
+./CoMeT/test/api/sim.cfg:38:transition_latency = 2000
+./CoMeT/test/api/sim.cfg:105:hop_latency = 2
+./CoMeT/test/api/sim.cfg:118:hop_latency = 2
+./CoMeT/test/api/sim.cfg:181:latency = 45
+./CoMeT/test/api/sim.cfg:218:include_memory_latency = "true"
+./CoMeT/tools/mcpat.py:725:    # L2 with zero access latency can be used when we don't really want an L2, but need one to interface with the NoC
+./CoMeT/tools/mcpat.py:840:      latency_bp = long(sniper_config.get_config(cfg, 'perf_model/branch_predictor/mispredict_penalty', core))
+./CoMeT/tools/mcpat.py:842:      latency_l1_d = long(sniper_config.get_config(cfg, 'perf_model/l1_dcache/data_access_time', core))
+./CoMeT/tools/mcpat.py:843:      latency_l1_i = long(sniper_config.get_config(cfg, 'perf_model/l1_icache/data_access_time', core))
+./CoMeT/tools/mcpat.py:844:      latency_l2 = long(sniper_config.get_config_default(cfg, 'perf_model/l2_cache/data_access_time', 0, core))
+./CoMeT/tools/mcpat.py:845:      latency_l3 = long(sniper_config.get_config_default(cfg, 'perf_model/l3_cache/data_access_time', 0, core))
+./CoMeT/tools/mcpat.py:1131:            iconf.append(latency_l1_i) #latency="access time"
+./CoMeT/tools/mcpat.py:1142:            l2conf.append(latency_l2)
+./CoMeT/tools/mcpat.py:1152:            # Increase throughput and latency constraints, otherwise McPAT calls CACTI some more
+./CoMeT/tools/mcpat.py:1155:            dconf.append(10*latency_l1_d)
+./CoMeT/tools/mcpat.py:1166:            l3conf.append(latency_l3)
+./CoMeT/tools/mcpat.py:1417:    template.append(["\t\t\t\t<!-- the parameters are capacity,block_width, associativity,bank, throughput w.r.t. core clock, latency w.r.t. core clock,-->",""])
+./CoMeT/tools/mcpat.py:1445:    template.append(["\t\t\t\t<param name=\"BTB_config\" value=\"18944,8,4,1, 1,3\"/>",""]) # ( (64 target + 3 type + 4 ffset + 3 PLRU bits) * 512 entries * 4 ways ) / 8 bits-per-byte = 18944 bytes; tag overheads are already taken into account; block size = 8, associativity = 4, num-of-banks = 1, throughput = 1, latency = 3
+./CoMeT/tools/mcpat.py:1448:    template.append(["\t\t\t\t<!-- the parameters are capacity,block_width,associativity,bank, throughput w.r.t. core clock, latency w.r.t. core clock,-->",""])
+./CoMeT/tools/mcpat.py:1509:    template.append(["\t\t<!-- the parameters are capacity,block_width, associativity,bank, throughput w.r.t. core clock, latency w.r.t. core clock,-->",""])
+./CoMeT/tools/mcpat.py:1539:  template.append(["\t\t\t<param name=\"link_latency\" value=\"1\"/>",""])
+./CoMeT/tools/gen_simout.py:138:  results['dram.avglatency'] = map(lambda (a,b): a/b if b else float('inf'), zip(results['dram.total-access-latency'], results['dram.accesses']))
+./CoMeT/tools/gen_simout.py:142:    ('  average dram access latency (ns)', 'dram.avglatency', format_ns(2)),
+./CoMeT/tools/sniper_lib.py:109:    l1time = sum(stats['L1-D.total-latency'])

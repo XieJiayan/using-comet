@@ -4,12 +4,10 @@ memTherm_core.py
 """
 
 import sys, os, sim
+import reliability as rlb
 
 LOW_POWER = 0
 NORMAL_POWER = 1
-## 3_midpower
-MID_POWER = 2
-## 3_midpower_end
 
 bank_size=int(sim.config.get('memory/bank_size'))
 no_columns = 1                                      # in Kilo
@@ -31,10 +29,10 @@ core_thermal_enabled = sim.config.get("core_thermal/enabled")
 mem_dtm = sim.config.get('scheduler/open/dram/dtm')
 lpm_dynamic_power = float(sim.config.get('perf_model/dram/lowpower/lpm_dynamic_power'))
 lpm_leakage_power = float(sim.config.get('perf_model/dram/lowpower/lpm_leakage_power'))
-## 3_midpower
-mpm_dynamic_power = float(sim.config.get('perf_model/dram/lowpower/mpm_dynamic_power'))
-mpm_leakage_power = float(sim.config.get('perf_model/dram/lowpower/mpm_leakage_power'))
-## 3_midpower_end
+
+core_frequency_min = float(sim.config.get('perf_model/core/min_frequency'))*1000
+core_frequency_max = float(sim.config.get('perf_model/core/max_frequency'))*1000
+core_frequency_step = float(sim.config.get('perf_model/core/frequency_step_size'))*1000
 
 #define constants
 #_enable = 1
@@ -116,9 +114,6 @@ c_hotspot_config_file      =   hotspot_config_path + sim.config.get('hotspot/hot
 hotspot_floorplan_folder   = hotspot_config_path + sim.config.get('hotspot/floorplan_folder')
 hotspot_layer_file  =   hotspot_config_path + sim.config.get('hotspot/layer_file_mem')
 c_hotspot_layer_file  =   hotspot_config_path + sim.config.get('hotspot/layer_file_core')
-## 3D_RC add
-##rc_model_file =  sim.config.get('hotspot/log_files/rc_model_file')
-## 3D_RC end
 
 # Output Parameters for hotspot simulation
 combined_temperature_trace_file = sim.config.get('hotspot/log_files/combined_temperature_trace_file')
@@ -151,8 +146,6 @@ c_full_temperature_trace_file = sim.config.get('hotspot/log_files_core/full_temp
 c_temperature_trace_file = sim.config.get('hotspot/log_files_core/temperature_trace_file')
 c_init_file = sim.config.get('hotspot/log_files_core/init_file')
 
-print("there core_mem configuration has been read")                  
-
 #Basic idea of the flow is:
 #Generate power trace using access trace from sniper in a periodic manner (for memories).
 #The power trace of core is generated through the mcpat script.
@@ -166,16 +159,15 @@ hotspot_command = executable  \
 				  + ' -pTot ' + power_trace_file_total \
                   + ' -o ' + temperature_trace_file \
                   + ' -model_secondary 1 -model_type grid ' \
-                  + ' -grid_steady_file ' + hotspot_grid_steady_file \
                   + ' -steady_file ' + hotspot_steady_temp_file \
                   + ' -all_transient_file ' + hotspot_all_transient_file \
+                  + ' -grid_steady_file ' + hotspot_grid_steady_file \
                   + ' -steady_state_print_disable 1 ' \
                   + ' -l 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1, ' \
                   + ' -type ' + type_of_stack \
                   + ' -sampling_intvl ' + str(interval_sec) \
                   + ' -grid_layer_file ' + hotspot_layer_file \
                   + ' -detailed_3D on'
-                  
 #                  + ' -f ' + hotspot_floorplan_file \
 
 if mem_dtm != "off":
@@ -307,15 +299,6 @@ class memTherm:
       stat_component_rd_lowpower, stat_name_read_lowpower = stat_read_lowpower.rsplit('.', 1)
       stat_component_wr_lowpower, stat_name_write_lowpower = stat_write_lowpower.rsplit('.', 1)
 
-      ## 3_midpower 
-      stat_write_midpower = 'dram.bank_write_access_counter_midpower'       #from sniper C-code
-      stat_read_midpower = 'dram.bank_read_access_counter_midpower'       #from sniper C-code
-      self.stat_name_read_midpower = stat_read_midpower
-      self.stat_name_write_midpower= stat_write_midpower
-      stat_component_rd_midpower, stat_name_read_midpower = stat_read_midpower.rsplit('.', 1)
-      stat_component_wr_midpower, stat_name_write_midpower = stat_write_midpower.rsplit('.', 1)
-      ## mid_power_end
-
     stat_bank_mode = 'dram.bank_mode'
     self.stat_name_bank_mode = stat_bank_mode
     stat_component_bank_mode, stat_name_bank_mode = stat_bank_mode.rsplit('.', 1)
@@ -340,10 +323,6 @@ class memTherm:
         'stat_rd_lowpower': [ self.getStatsGetter(stat_component_rd_lowpower, bank, stat_name_read_lowpower) for bank in range(NUM_BANKS) ],
         'stat_wr_lowpower': [ self.getStatsGetter(stat_component_wr_lowpower, bank, stat_name_write_lowpower) for bank in range(NUM_BANKS) ],
         'stat_bank_mode': [ self.getStatsGetter(stat_component_bank_mode, bank, stat_name_bank_mode) for bank in range(NUM_BANKS)],
-        ## 3_midpower
-        'stat_rd_midpower': [ self.getStatsGetter(stat_component_rd_midpower, bank, stat_name_read_midpower) for bank in range(NUM_BANKS) ],
-        'stat_wr_midpower': [ self.getStatsGetter(stat_component_wr_midpower, bank, stat_name_write_midpower) for bank in range(NUM_BANKS) ],
-        ## 3_midpower_end
       }
     else:
       self.stats = {
@@ -372,7 +351,11 @@ class memTherm:
     with open(full_power_trace_file, "w") as f:
         f.write("%s\n" %(ptrace_header))
     f.close()
-    
+
+    if rlb.enabled:
+        rlb.clean_reliability_files()
+        rlb.init_reliability_files(combined_header, ptrace_header)
+
     mem_header = gen_mem_header()
     with open(full_bank_mode_trace_file, "w") as f:
         f.write("%s\n" %(mem_header))
@@ -438,30 +421,8 @@ class memTherm:
         access_rates_write_lowpower[bank] = statdiff_wr_lowpower
         self.fd.write(' %u' % statdiff_wr_lowpower)
       self.fd.write('\n')
-      
-      ## 3_midpower
-      if self.isTerminal:
-        self.fd.write('[STAT:%s] ' % self.stat_name_write_midpower)
-      access_rates_write_midpower = [0 for number in xrange(NUM_BANKS)]
-      for bank in range(NUM_BANKS):
-        statdiff_wr_midpower = self.stats['stat_wr_midpower'][bank].last
-        access_rates_write_midpower[bank] = statdiff_wr_midpower
-        self.fd.write(' %u' % statdiff_wr_midpower)
-      self.fd.write('\n')
-      
-      if self.isTerminal:
-        self.fd.write('[STAT:%s] ' % self.stat_name_read_midpower)
-      access_rates_read_midpower = [0 for number in xrange(NUM_BANKS)]
-      for bank in range(NUM_BANKS):
-        statdiff_rd_midpower = self.stats['stat_rd_midpower'][bank].last
-        access_rates_read_midpower[bank] = statdiff_rd_midpower
-        self.fd.write(' %u' % statdiff_rd_midpower)
-      self.fd.write('\n')
-      ## 3_midpower_end
-      ## 3_midpower
-      return access_rates_read, access_rates_write, access_rates_read_lowpower, access_rates_write_lowpower , access_rates_read_midpower , access_rates_read_midpower
-      ## 3_midpower_end
-      ##return access_rates_read, access_rates_write, access_rates_read_lowpower, access_rates_write_lowpower
+
+      return access_rates_read, access_rates_write, access_rates_read_lowpower, access_rates_write_lowpower
 
     return access_rates_read, access_rates_write, [], []
 
@@ -482,7 +443,6 @@ class memTherm:
         f.write("%s" %(bank_mode_trace_string))
     f.close()
 
-
   def write_bank_leakage_trace(self, time, time_delta):
     """
     Write a tab separated text file with a row of memory unit headers, 
@@ -495,11 +455,6 @@ class memTherm:
       leakage = 1.0
       if bank_mode_trace[bank] == LOW_POWER:
         leakage = lpm_leakage_power
-    ## 3_midpower
-      if bank_mode_trace[bank] == MID_POWER:
-        leakage = mpm_leakage_power 
-    ## 3_midpower_end
-
       # print(bank_mode_trace[bank])
       bank_mode_trace_string = bank_mode_trace_string + "{:.2f}".format(leakage) + '\t'
     bank_mode_trace_string += "\r\n"
@@ -512,12 +467,9 @@ class memTherm:
 
 
     # calculate power trace using access rate and other parameters
+  
   def calc_power_trace(self, time, time_delta):
-    ## 3_midpower
-    accesses_read, accesses_write, accesses_read_lowpower, accesses_write_lowpower, accesses_read_midpower , accesses_write_midpower = self.get_access_rates(time, time_delta)
-    ## 3_midpower_end
-
-    ## accesses_read, accesses_write, accesses_read_lowpower, accesses_write_lowpower = self.get_access_rates(time, time_delta)
+    accesses_read, accesses_write, accesses_read_lowpower, accesses_write_lowpower = self.get_access_rates(time, time_delta)
  #    print accesses 
 
     avg_no_refresh_intervals_in_timestep =  timestep/t_refi                                                     # 20/7.8 = 2.56 refreshes on an average 
@@ -533,18 +485,13 @@ class memTherm:
         # In case of low power mode, multiply the read and write accesses with the given scale factor.
         normal_power_access = accesses_read[bank] * energy_per_read_access + accesses_write[bank] * energy_per_write_access
         low_power_access    = (accesses_read_lowpower[bank] * energy_per_read_access + accesses_write_lowpower[bank] * energy_per_write_access) * lpm_dynamic_power
-        ## 3_midpower
-        mid_power_access =  (accesses_read_midpower[bank] * energy_per_read_access + accesses_write_midpower[bank] * energy_per_write_access) * mpm_dynamic_power
-        ## 3_midpower_end
-        ## 3_midpower
-        bank_power_trace[bank] =  (normal_power_access + low_power_access + mid_power_access) / (timestep*1000) + bank_static_power + avg_refresh_power
-        ## 3_midpower_end
-        ## bank_power_trace[bank] =  (normal_power_access + low_power_access) / (timestep*1000) + bank_static_power + avg_refresh_power
+        bank_power_trace[bank] =  (normal_power_access + low_power_access) / (timestep*1000) + bank_static_power + avg_refresh_power
 
       else:
         bank_power_trace[bank] = (accesses_read[bank] * energy_per_read_access + accesses_write[bank] * energy_per_write_access)/(timestep*1000) \
                       + bank_static_power + avg_refresh_power
       bank_power_trace[bank] = round(bank_power_trace[bank], 3)
+    
     logic_power_trace = ''
     #create logic_core power array. applicable only for 3Dmem and 2.5D memory
     if (type_of_stack=="2.5D" or type_of_stack=="3Dmem"):
@@ -716,7 +663,10 @@ class memTherm:
 
   def get_core_vdd_for_hotspot(self):
     lfreq = [ sim.dvfs.get_frequency(core) for core in range(sim.config.ncores) ]
-    lvdd = [ self.ES.get_vdd_from_freq(f) for f in lfreq ]
+    if rlb.enabled:
+      lvdd = [ self.ES.get_vdd_from_freq(f) for f in rlb.target_freqs(lfreq) ]
+    else:
+      lvdd = [ self.ES.get_vdd_from_freq(f) for f in lfreq ]
     lvdd = [ v/1.2 for v in lvdd ]          #normalize to 1.2 volts
     lvdd = [ round(v, 1) for v in lvdd ]    #round to 1 digit decimal
     vdd_str = ""
@@ -755,6 +705,11 @@ class memTherm:
     self.format_trace_file(True, c_power_trace_file, power_trace_file, combined_power_trace_file, combined_instpower_trace_file)
     self.format_trace_file(True, c_power_trace_file_total, power_trace_file_total, combined_power_trace_file_total, combined_instpower_trace_file_total)
       #concatenate the per interval temperature trace into a single file
+
+    # Update reliability values of all the cores.
+    if rlb.enabled:
+        rlb.update_reliability_values(time_delta, time)
+
     os.system("cp " + hotspot_all_transient_file + " " + init_file)
     os.system("tail -1 " + temperature_trace_file + ">>" + full_temperature_trace_file)
     os.system("tail -1 " + power_trace_file + " >>" + full_power_trace_file)
@@ -783,8 +738,10 @@ def build_dvfs_table(tech):
     # McPAT does not support technology nodes smaller than 22nm and is operated at 22nm.
     # The scaling is then done in tools/mcpat.py.
     def v(f):
-      return 0.6 + f / 4000.0 * 0.8
-    return [ (f, v(f))  for f in reversed(range(0, 4000+1, 100))]
+      return 0.6 + f / core_frequency_max * 0.8
+    return [ (f, v(f))  for f in reversed(range(int(core_frequency_min), 
+                                                int(core_frequency_max)+1, 
+                                                int(core_frequency_step))) ]
   elif tech == 45:
     return [ (2000, 1.2), (1800, 1.1), (1500, 1.0), (1000, 0.9), (0, 0.8) ]
   else:
@@ -843,14 +800,19 @@ class EnergyStats:
 
   def get_vdd_from_freq(self, f):
     # Assume self.dvfs_table is sorted from highest frequency to lowest
+    if f > core_frequency_max:
+      raise ValueError('Could not find a Vdd for invalid frequency %f exceeding the core\'s maximum frequency' % f)
     for _f, _v in self.dvfs_table:
       if f >= _f:
         return _v
-    assert ValueError('Could not find a Vdd for invalid frequency %f' % f)
+    raise ValueError('Could not find a Vdd for invalid frequency %f' % f)
 
   def gen_config(self, outputbase):
     freq = [ sim.dvfs.get_frequency(core) for core in range(sim.config.ncores) ]
-    vdd = [ self.get_vdd_from_freq(f) for f in freq ]
+    if rlb.enabled:
+      vdd = [ self.get_vdd_from_freq(f) for f in rlb.target_freqs(freq) ]
+    else:
+      vdd = [ self.get_vdd_from_freq(f) for f in freq ]
     configfile = outputbase+'.cfg'
     cfg = open(configfile, 'w')
     cfg.write('''

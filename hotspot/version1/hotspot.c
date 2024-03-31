@@ -83,9 +83,6 @@ void usage(int argc, char **argv)
   fprintf(stdout, "           \toverride the options from config file. e.g. \"-model_type block\" selects\n");
   fprintf(stdout, "           \tthe block model while \"-model_type grid\" selects the grid model\n");
   fprintf(stdout, "  [-detailed_3D <on/off]>\tHeterogeneous R-C assignments for specified layers. Requires a .lcf file to be specified\n"); //BU_3D: added detailed_3D option
-	// 3D_RC begin
-//fprintf(stdout, "  [-print_RC_model <file>]\toutput RC thermal model to file\n");	
-	// 3D_RC end																	   
 }
 
 /* 
@@ -94,7 +91,7 @@ void usage(int argc, char **argv)
  */
 void global_config_from_strs(global_config_t *config, str_pair *table, int size)
 {
-    //my add to get the number of the int_size
+  //my add to get the number of the int_size
   printf("the size_I_want is %d \n  ", size);
   int idx;
   // if ((idx = get_str_index(table, size, "f")) >= 0) {
@@ -104,7 +101,7 @@ void global_config_from_strs(global_config_t *config, str_pair *table, int size)
   //     fatal("required parameter flp_file missing. check usage\n");
   // }
 
-  if ((idx = get_str_index(table, size, "grid_layer_file")) < 0)
+  if ((idx = get_str_index(table, size, "grid_layer_file")) < 0)              // means there must be a grid_layer_file in the configuration
       fatal("required parameter grid_layer_file missing. check usage\n");
 
   if ((idx = get_str_index(table, size, "p")) >= 0) {
@@ -145,16 +142,7 @@ void global_config_from_strs(global_config_t *config, str_pair *table, int size)
   } else {
       strcpy(config->detailed_3D, "off");
   }
-  // 3D_RC begin
-  /*
-  if ((idx = get_str_index(table, size, "print_RC_model")) >= 0) {
-      if(sscanf(table[idx].value, "%s", config->RC_model_outfile) != 1)
-        fatal("invalid format for configuration  parameter print_RC_model\n");
-  } else {
-      strcpy(config->RC_model_outfile, NULLFILE);
-  } 
-  */
-  // 3D_RC end    
+  
 
   if ((idx = get_str_index(table, size, "l")) >= 0) {
       printf("idx = %u\n", idx);
@@ -190,11 +178,8 @@ void global_config_from_strs(global_config_t *config, str_pair *table, int size)
  */
 int global_config_to_strs(global_config_t *config, str_pair *table, int max_entries)
 {
-  //if (max_entries < 7)
-  // 3D_RC begin
   if (max_entries < 7)
     fatal("not enough entries in table\n");
-// 3D_RC end
 
   sprintf(table[0].name, "f");
   sprintf(table[1].name, "p");
@@ -204,21 +189,16 @@ int global_config_to_strs(global_config_t *config, str_pair *table, int max_entr
   sprintf(table[5].name, "detailed_3D");
   sprintf(table[6].name, "l");
   sprintf(table[8].name, "bm");
-  // 3D_RC begin
-  //sprintf(table[9].name, "print_RC_model");
-  // 3D_RC end
   sprintf(table[0].value, "%s", config->flp_file);
   sprintf(table[1].value, "%s", config->p_infile);
   sprintf(table[2].value, "%s", config->t_outfile);
+  // my add , printf("this is what I want : %s",);
   sprintf(table[3].value, "%s", config->config);
   sprintf(table[4].value, "%s", config->dump_config);
   sprintf(table[5].value, "%s", config->detailed_3D);
   sprintf(table[6].value, "%s", leakage_vector);
   sprintf(table[7].value, "%s", volt_vector);
   sprintf(table[8].value, "%s", config->bm_infile);
-  // 3D_RC begin
-  //sprintf(table[9].value, "%s", config->RC_model_outfile);
-  // 3D_RC end
 
   return 6;
 }
@@ -358,16 +338,13 @@ void write_names(FILE *fp, char **names, int size)
 /* write a single line of temperature trace(in degree C)	*/
 void write_vals(FILE *fp, double *vals, int size)
 {
-  printf("the temp is here !");
   int i;
-  for(i=0; i < size-1; i++){
+  for(i=0; i < size-1; i++)
     fprintf(fp, "%.2f\t", vals[i]-273.15);
-    printf("%.2f\t", vals[i]-273.15);
-  }
   fprintf(fp, "%.2f\n", vals[i]-273.15);
-  printf( "%.2f\n", vals[i]-273.15);
 }
 
+//change here xxjjyy
 /* write a single line of power trace(in W)	*/
 void write_vals_power(FILE *fp, double *vals, int size)
 {
@@ -376,10 +353,10 @@ void write_vals_power(FILE *fp, double *vals, int size)
   int i;
   for(i=0; i < size-1; i++){
     fprintf(fp, "%.2f\t", vals[i]);
-      printf( "%.2f\t", vals[i]);// my add
-  }
+    printf( "%.2f\t", vals[i]);
+    }
   fprintf(fp, "%.2f\n", vals[i]);
-    // my add
+  // my add
   printf( "%.2f\n", vals[i]);
 }
 
@@ -424,18 +401,6 @@ int main(int argc, char **argv)
   char **names;
   double *vals;
   double *vals_withLeak;
-  
-  // my add functin here
-  //
-	int ii;
-	printf("input %d arguments\n", argc);
-	for (ii = 0; ii <= argc; ii++)
-	{
-		printf("argument %d = %s\n", ii, argv[ii]);
-	}
-  //	(void)getchar();
-  // my function ends here
-  //
 
   float bank_modes[MAX_UNITS]; // Keep track of the bank modes for use in low power mode.
   int banks_nr = 0;
@@ -469,9 +434,6 @@ int main(int argc, char **argv)
 
   /*BU_3D: variable for heterogenous R-C model */
   int do_detailed_3D = FALSE; //BU_3D: do_detailed_3D, false by default
-  // 3D_RC add
-  //int do_print_RC_model = FALSE; //Sobhan: To write matrices of the RC model into a text file, false by default
-  // 3D_RC end
   if (!(argc >= 5 && argc % 2)) {
       usage(argc, argv);
       return 1;
@@ -553,12 +515,6 @@ for (i = 0; i < length_v; ++i)
       fatal("detailed_3D parameter should be either \'on\' or \'off\'\n");
   }//end->BU_3D
 
-  // 3D_RC add
-  /* Sobhan: check if RC model printing is on */
-  //if(strcmp(global_config.RC_model_outfile, NULLFILE))
- //     do_print_RC_model = TRUE;
- // 3D_RC end 
-
   /* get defaults */
   thermal_config = default_thermal_config();
   /* modify according to command line / config file	*/
@@ -606,12 +562,6 @@ for (i = 0; i < length_v; ++i)
   if (do_transient)
     populate_C_model(model, flp);
 
-// 3D_RC add
-  //Sobhan: Convert the grid model to an equivalent block model 
-// 3D_RC end
-
-
-
 #if VERBOSE > 2
   debug_print_model(model);
 #endif
@@ -620,6 +570,7 @@ for (i = 0; i < length_v; ++i)
   /* using hotspot_vector to internally allocate any extra nodes needed	*/
   if (do_transient)
     temp = hotspot_vector(model);
+
   power = hotspot_vector(model);
   power_withLeak = hotspot_vector(model);
   steady_temp = hotspot_vector(model);
@@ -627,20 +578,21 @@ for (i = 0; i < length_v; ++i)
 
   /* set up initial instantaneous temperatures */
   if (do_transient && strcmp(model->config->init_file, NULLFILE)) {
-	 // my add printf
-	 printf(" the inital temp file's name is -- %s \n", model->config->init_file);
-	 // my add ends
-	 //
+      // my add printf
+      printf(" the inital temp file's name is -- %s \n", model->config->init_file);
+      // my add neds
       if (!model->config->dtm_used)	/* initial T = steady T for no DTM	*/
         read_temp(model, temp, model->config->init_file, FALSE);
       else	/* initial T = clipped steady T with DTM	*/
         read_temp(model, temp, model->config->init_file, TRUE);
-  } else if (do_transient){	/* no input file - use init_temp as the common temperature	*/
+  } else if (do_transient)	/* no input file - use init_temp as the common temperature	*/
     set_temp(model, temp, model->config->init_temp);
-        // my add
+    // my add
     printf("set the initial temp is %.2f \n " ,model->config->init_temp );
-  }
- 	//set_temp(model, temp, 331.3);
+    //my add
+    set_temp(model, temp, model->config->init_temp);
+
+
 
   /* n is the number of functional blocks in the block model
    * while it is the sum total of the number of functional blocks
@@ -662,11 +614,14 @@ for (i = 0; i < length_v; ++i)
     fatal("unable to open temperature trace file for output\n");
   if(do_transient && !(pout_withLeak = fopen(global_config.pTot_outfile, "w")))
     fatal("unable to open power trace file (total power with leakage) for output\n");
-        // my add
-    printf("I am here");
-    printf("this is p_infile I want : %s \n ",global_config.p_infile);
-    printf("this is t_outfile I want : %s \n ",global_config.t_outfile);
-    printf("this is pTot_outfile I want : %s \n ",global_config.pTot_outfile);
+
+    // my add
+    //printf("I am here \t");
+    //printf("this is p_infile I want : %s \n ",global_config.p_infile);
+    //printf("this is t_outfile I want : %s \n ",global_config.t_outfile);
+    //printf("this is pTot_outfile I want : %s \n ",global_config.pTot_outfile);
+
+
   /* names of functional units	*/
   names = alloc_names(MAX_UNITS, STR_SIZE);
   if(read_names(pin, names) != n)
@@ -720,11 +675,9 @@ for (i = 0; i < length_v; ++i)
   vals = dvector(MAX_UNITS);
   vals_withLeak = dvector(MAX_UNITS);
 
+  //add my own functions here !!!!!!!!!!!!!!!
+for(int loop=0 ; loop<100 ; loop ++){
 
-//my add
-//xjy_loop is here
-//for(int loop=0 ; loop<100 ; loop ++){
-//my add over
 
 
   while ((num=read_vals(pin, vals)) != 0) {
@@ -773,8 +726,11 @@ for (i = 0; i < length_v; ++i)
               vals_withLeak[i] = power_withLeak[get_blk_index(flp, names[i])];
 			}
           else
+            // for-loop : grid N-layers calculate,  i -> vals
             for(i=0, base=0, count=0; i < model->grid->n_layers; i++) {
+              // if the layer has the power
                 if(model->grid->layers[i].has_power) {
+                  // calculate every units on the floorplan
                     for(j=0; j < model->grid->layers[i].flp->n_units; j++) {
                         idx = get_blk_index(model->grid->layers[i].flp, names[count+j]);
                         vals[count+j] = temp[base+idx];
@@ -788,7 +744,6 @@ for (i = 0; i < length_v; ++i)
           /* output instantaneous temperature trace	*/
           write_vals(tout, vals, n);
           write_vals_power(pout_withLeak, vals_withLeak, n);
-          //write_vals_power(pout_withLeak, power_withLeak, n);
       }		
 
       /* for computing average	*/
@@ -826,9 +781,16 @@ for (i = 0; i < length_v; ++i)
     }
 
 
-  // my loop end here
-  //}
-// my add loop ends
+
+}
+/*
+  将这里当作整个的分界线
+  上面的代码我将插入 while() 的指令
+*/
+
+
+
+
 
   /* natural convection r_convec iteration, for steady-state only */ 		
   natural_convergence = 0;
